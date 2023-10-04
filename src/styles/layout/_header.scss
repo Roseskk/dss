@@ -1,0 +1,46 @@
+@import "../abstracts/_variables";
+@import "../abstracts/_mixins";
+
+.header {
+  background-color: transparent;
+  @include flexbox(row, center, space-between)
+}
+
+
+.section-header {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  height: calc(100vh - 160px);
+  padding: 80px 160px;
+  @include background-image('../../images/head/header.png');
+  @include flexbox(column, unset, unset, 246px);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50vw;
+    background-color: #2E2E2E;  // Или другой оттенок серого
+  }
+
+  &::before {
+    left: 100%;
+    transform: translateX(0);
+  }
+
+  &::after {
+    right: 100%;
+    transform: translateX(0);
+  }
+}
+
+
+.header-list {
+  color: white;
+  font-size: 20px;
+  @include flexbox(row, center, flex-start, 77px)
+}

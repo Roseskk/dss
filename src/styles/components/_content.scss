@@ -1,0 +1,33 @@
+@import "../abstracts/_variables";
+@import "../abstracts/_mixins";
+
+.content {
+  color: $color-primary;
+  font-family: $font-family;
+}
+
+.content-flex {
+  @include flexbox(row, unset, space-between)
+}
+
+.content-even {
+  width: 50%;
+}
+
+.content-title {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.content_subtitle {
+  font-size: 20px
+}
+
+.content-even__custom {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: 700px;
+  line-height: 36px;
+  margin-left: 70px;
+}

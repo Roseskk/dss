@@ -1,0 +1,11 @@
+@import "../abstracts/_variables";
+@import "../abstracts/_mixins";
+
+.link {
+  color: $color-secondary;
+  font-weight: 700;
+}
+
+.link_center {
+  @include flexbox(row, center, flex-start, 18px)
+}
