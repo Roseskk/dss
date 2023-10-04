@@ -44,7 +44,9 @@
       padding: 40px 10px 40px 63px;  // порядок: верх, право, низ, лево
       background: white;
       @include flexbox(column, unset, unset, 19px);
-      @include transition(all, 0.3s);
+      @include transition(all, 0.5s);
+
+      cursor: pointer;
 
       h3 {
         color: $color-secondary-hover;

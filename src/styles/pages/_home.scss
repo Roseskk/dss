@@ -5,7 +5,7 @@
   margin: 0 auto;
   max-width: 1920px;
 
-  @include flexbox(column)
+  @include flexbox(column, unset, unset, unset)
 }
 
 

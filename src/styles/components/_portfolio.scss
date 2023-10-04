@@ -1,0 +1,34 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+
+
+.portfolio {
+  position: relative;
+  padding: 80px 160px;
+  @include flexbox(column, unset, unset, 70px);
+
+}
+
+.portfolio-top {
+  @include flexbox(row, unset, unset, 70px);
+
+  div {
+
+    h2 {
+      font-size: 35px;
+
+      span {
+        color: $color-secondary-hover;
+      }
+
+    }
+
+    hr {
+      width: 100%;
+      border-radius: 10px;
+      height: 1px;
+      border: 1px solid black;
+    }
+  }
+
+}
