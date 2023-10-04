@@ -64,7 +64,7 @@
   font-style: normal;
 }
 .about {
-  padding: 80px 160px;
+  padding: 80px 0 80px 160px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -83,15 +83,21 @@
 
 .about-right {
   width: 50%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .about-title {
   font-size: 35px;
   line-height: 62px;
-  font-weight: 700;
+  font-weight: bold;
 }
 .about-title span {
   color: #B0D0FF;
+}
+
+.about-card-subtitle {
+  font-weight: 700;
 }
 
 .about-p {
@@ -156,6 +162,7 @@
 .portfolio {
   position: relative;
   padding: 80px 160px;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: unset;
@@ -166,21 +173,152 @@
 .portfolio-top {
   display: flex;
   flex-direction: row;
-  align-items: unset;
+  align-items: center;
   justify-content: unset;
   gap: 70px;
 }
+.portfolio-top hr {
+  width: calc(100% + 40px);
+  margin: 0 -20px;
+  border-radius: 10px;
+  height: 1px;
+  background: gray;
+}
 .portfolio-top div h2 {
   font-size: 35px;
+  white-space: nowrap;
+  font-weight: 700;
 }
 .portfolio-top div h2 span {
   color: #B0D0FF;
 }
-.portfolio-top div hr {
+.portfolio-top .portfolio-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: unset;
+  gap: 10px;
+}
+.portfolio-top .portfolio-container .portfolio-btn {
+  padding: 14px;
+  transition: background 0.5s ease-in-out;
+}
+.portfolio-top .portfolio-container .portfolio-btn svg path {
+  transition: fill 0.5s, opacity 0.5s;
+}
+.portfolio-top .portfolio-container .portfolio-btn:hover {
+  background: black;
+}
+.portfolio-top .portfolio-container .portfolio-btn:hover svg path {
+  fill: white;
+  opacity: 1;
+}
+.portfolio-top .portfolio-container .btn-right {
+  transform: rotate(180deg);
+  padding: 14px;
+  transition: background 0.5s ease-in-out;
+}
+.portfolio-top .portfolio-container .btn-right svg path {
+  transition: fill 0.5s, opacity 0.5s;
+}
+.portfolio-top .portfolio-container .btn-right:hover {
+  background: black;
+}
+.portfolio-top .portfolio-container .btn-right:hover svg path {
+  fill: white;
+  opacity: 1;
+}
+
+.portfolio-bottom {
+  color: white;
+}
+.portfolio-bottom ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: unset;
+  gap: 10px;
+}
+.portfolio-bottom ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: unset;
+  justify-content: unset;
+  gap: 166px;
+  position: relative;
+  min-width: 790px;
+  height: 514px;
+  cursor: pointer;
+}
+.portfolio-bottom ul li img {
+  opacity: 1;
+  filter: none;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
   width: 100%;
-  border-radius: 10px;
-  height: 1px;
-  border: 1px solid black;
+  height: 100%;
+  z-index: -1;
+  transition: all 0.5s ease-in-out;
+}
+.portfolio-bottom ul li .portfolio-bottom-wrapper {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  padding: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: unset;
+  justify-content: space-between;
+  gap: 0;
+}
+.portfolio-bottom ul li .portfolio-bottom-wrapper .portfolio-bottom__top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: unset;
+  gap: 10px;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.portfolio-bottom ul li .portfolio-bottom-wrapper .portfolio-bottom__anc {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 200px;
+}
+.portfolio-bottom ul li .portfolio-bottom-wrapper .portfolio-bottom__anc .portfolio-bottom__bots {
+  display: flex;
+  flex-direction: column;
+  align-items: unset;
+  justify-content: unset;
+  gap: 20px;
+}
+.portfolio-bottom ul li .portfolio-bottom-wrapper .portfolio-bottom__anc .portfolio-bottom__bots h2 {
+  font-size: 25px;
+  font-weight: 700;
+}
+.portfolio-bottom ul li .portfolio-bottom-wrapper .portfolio-bottom__anc .portfolio-bottom-arrow {
+  align-self: flex-end;
+}
+.portfolio-bottom ul li .portfolio-bottom-wrapper .portfolio-bottom__anc .portfolio-bottom-title {
+  font-size: 22px;
+  font-weight: 600;
+}
+.portfolio-bottom ul li .portfolio-bottom-wrapper .portfolio-bottom__anc span {
+  font-size: 20px;
+  font-weight: 400;
+}
+.portfolio-bottom ul li:hover img {
+  opacity: 0.8;
+  filter: blur(3px);
+}
+.portfolio-bottom ul li:hover .portfolio-bottom-wrapper {
+  visibility: visible;
+  opacity: 1;
 }
 
 .scroll_container {
@@ -230,7 +368,7 @@
   font-weight: normal;
   font-style: normal;
 }
-body, h1, h2, h3, h4, h5, h6, p, ul, ol {
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, hr {
   margin: 0;
   padding: 0;
 }
@@ -240,6 +378,14 @@ ul, li, a {
   padding: 0;
   list-style: none;
   text-decoration: none;
+}
+
+button {
+  border: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
 body {

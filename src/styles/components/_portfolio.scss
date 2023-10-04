@@ -5,17 +5,28 @@
 .portfolio {
   position: relative;
   padding: 80px 160px;
+  overflow-x: hidden;
   @include flexbox(column, unset, unset, 70px);
 
 }
 
 .portfolio-top {
-  @include flexbox(row, unset, unset, 70px);
+  @include flexbox(row, center, unset, 70px);
+
+  hr {
+    width: calc(100% + 2 * 20px);  // Предполагая, что вы хотите отступ в 20px с каждой стороны
+    margin: 0 -20px;  // Отрицательный отступ компенсирует дополнительную ширину
+    border-radius: 10px;
+    height: 1px;
+    background: gray;
+  }
 
   div {
 
     h2 {
       font-size: 35px;
+      white-space: nowrap;
+      font-weight: 700;
 
       span {
         color: $color-secondary-hover;
@@ -23,12 +34,127 @@
 
     }
 
-    hr {
-      width: 100%;
-      border-radius: 10px;
-      height: 1px;
-      border: 1px solid black;
-    }
   }
 
+  .portfolio-container {
+    @include flexbox(row, center, unset, 10px);
+
+    .portfolio-btn{
+      padding: 14px;
+      @include transition(background, 0.5s);
+      svg {
+        path {
+          transition: fill 0.5s, opacity 0.5s;  // Добавьте эту строку для плавного перехода
+        }
+      }
+
+      &:hover {
+        background: black;
+
+        svg {
+          path {
+            fill: white;
+            opacity: 1;// Добавьте этот блок для изменения свойств SVG при наведении
+          }
+        }
+      }
+    }
+
+    .btn-right {
+      transform: rotate(180deg);
+      padding: 14px;
+      @include transition(background, 0.5s);
+
+      svg {
+        path {
+          transition: fill 0.5s, opacity 0.5s;  // Добавьте эту строку для плавного перехода
+        }
+      }
+
+      &:hover {
+        background: black;
+
+        svg {
+          path {
+            fill: white;
+            opacity: 1;// Добавьте этот блок для изменения свойств SVG при наведении
+          }
+        }
+      }
+    }
+  }
+}
+
+.portfolio-bottom {
+  color: white;
+  ul {
+    @include flexbox(row, center, unset, 10px);
+
+
+    li {
+      @include flexbox(column, unset, unset, 166px);
+      position: relative;
+      min-width: 790px;
+      height: 514px;
+      cursor: pointer;
+
+      img {
+        opacity: 1;
+        filter: none;
+        @include img-background;
+        @include transition(all, 0.5s)
+      }
+      .portfolio-bottom-wrapper {
+
+        visibility: hidden;
+        opacity: 0;
+        @include transition(all, 0.5s);
+
+        padding: 40px;
+        height: 100%;
+        @include flexbox(column,unset,space-between);
+        .portfolio-bottom__top {
+          @include flexbox(column, flex-end, unset, 10px);
+          text-transform: uppercase;
+          font-size: 16px;
+        }
+        .portfolio-bottom__anc {
+          @include flexbox(row, center, space-between, 200px);
+
+          .portfolio-bottom__bots {
+            @include flexbox(column, unset, unset, 20px);
+
+            h2 {
+              font-size: 25px;
+              font-weight: 700;
+            }
+          }
+
+          .portfolio-bottom-arrow {
+            align-self: flex-end;
+          }
+
+          .portfolio-bottom-title {
+            font-size: 22px;
+            font-weight: 600;
+          }
+
+          span {
+            font-size: 20px;
+            font-weight: 400;
+          }
+        }
+      }
+      &:hover {
+        img {
+          opacity: 0.8;
+          filter: blur(3px);
+        }
+        .portfolio-bottom-wrapper {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
 }

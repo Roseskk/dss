@@ -1,4 +1,4 @@
-body, h1, h2, h3, h4, h5, h6, p, ul, ol {
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, hr {
   margin: 0;
   padding: 0;
 }
@@ -8,6 +8,15 @@ ul, li, a {
   padding: 0;
   list-style: none;
   text-decoration: none;
+}
+
+button {
+  border: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+
+  cursor: pointer;
 }
 
 body {

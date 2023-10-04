@@ -2,7 +2,7 @@
 @import "../abstracts/_mixins";
 
 .about {
-  padding: 80px 160px;
+  padding: 80px 0 80px 160px;
   @include flexbox(row)
 }
 .about-left {
@@ -13,17 +13,23 @@
 
 .about-right {
   width: 50%;
+  display: flex;
+  justify-content: flex-end;
 
 }
 
 .about-title {
   font-size: 35px;
   line-height: 62px;
-  font-weight: 700;
+  font-weight: bold;
 
   span {
     color: $color-secondary-hover;
   }
+}
+
+.about-card-subtitle {
+  font-weight: 700;
 }
 
 
