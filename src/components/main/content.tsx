@@ -10,7 +10,7 @@ const Content: React.FC = () => {
             </div>
             <div className={"content-even__custom content_subtitle"}>
                 <div>
-                    Vulputate orci sed tempor nunc leo iaculis imperdiet. Leo luctus pharetra euismod sed molestie sodales cursus. Ullamcorper dui nunc, duis lorem eget tristique augue vitae integer Vulputate orci sed tempor nunc leo iaculis imperdiet. Leo luctus pharetra euismod sed molestie sodales cursus. Ullamcorper dui nunc, duis lorem eget tristique augue vitae integer
+                    DSSystem – веб-студия полного цикла, которая занимается разработкой и продвижением digital-проектов. Дизайн, создание сайтов и приложений, доработка, маркетинг и администрирование – все это мы сделаем на высшем уровне. Работаем с небольшими частными и крупными корпоративными проектами.
                 </div>
                 <Link className={"link_center"} to={"#"}>
                     <span className={"link"}>Подробнее</span>

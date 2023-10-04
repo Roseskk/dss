@@ -1,0 +1,73 @@
+@import "../abstracts/_variables";
+@import "../abstracts/_mixins";
+
+.about {
+  padding: 80px 160px;
+  @include flexbox(row)
+}
+.about-left {
+  width: 50%;
+
+  @include flexbox(column, unset, unset, 31px)
+}
+
+.about-right {
+  width: 50%;
+
+}
+
+.about-title {
+  font-size: 35px;
+  line-height: 62px;
+  font-weight: 700;
+
+  span {
+    color: $color-secondary-hover;
+  }
+}
+
+
+.about-p {
+  font-size: 20px;
+  line-height: 36px;
+  font-weight: 400;
+}
+
+.about-card {
+  ul {
+    flex-wrap: wrap;
+    @include flexbox(row, stretch, flex-start);
+
+    li {
+      flex-wrap: wrap;
+      width: calc(50% - 80px);  // учитывая отступы в 10px с каждой стороны
+      padding: 40px 10px 40px 63px;  // порядок: верх, право, низ, лево
+      background: white;
+      @include flexbox(column, unset, unset, 19px);
+      @include transition(all, 0.3s);
+
+      h3 {
+        color: $color-secondary-hover;
+        font-size: 23px;
+      }
+
+      span {
+        font-size: 20px;
+        display: block;
+      }
+
+      .about-card-subtitle {
+        font-size: 23px;
+        margin-top: 0;
+        height: 66px;  // примерное значение, вы можете установить своё
+        display: block;   // чтобы span вел себя как блочный элемент
+        line-height: 1.2;
+      }
+
+      &:hover {
+        background: #2E2E2E;
+        color: white;
+      }
+    }
+  }
+}

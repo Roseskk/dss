@@ -7,13 +7,13 @@ const Header: React.FC = (props) => {
     return(
         <header>
             <nav className={"header"}>
-                <img src={logo} alt={"DSSYSTEM"}/>
+                <Link to={'/'}><img src={logo} alt={"DSSYSTEM"}/></Link>
                 <ul className={"header-list"}>
-                    <li>Портфолио</li>
-                    <li>Услуги</li>
-                    <li>О нас</li>
-                    <li>Блог</li>
-                    <li>Контакты</li>
+                    <li className={'header-list__item'}>Портфолио</li>
+                    <li className={'header-list__item'}>Услуги</li>
+                    <li className={'header-list__item'}>О нас</li>
+                    <li className={'header-list__item'}>Блог</li>
+                    <li className={'header-list__item'}>Контакты</li>
                 </ul>
                 <Link className={"link_center"} to={"#"}>
                     <span className={"link"}>Оформить заявку</span>
