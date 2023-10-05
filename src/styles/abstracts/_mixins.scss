@@ -12,7 +12,10 @@
     @media (min-width: 768px) and (max-width: 1023px) {@content;}
   }
   @else if $breakpoint == 'large' {
-    @media (min-width: 1024px) {@content; }
+    @media (min-width: 1024px) and (max-width: 1500px) {@content; }
+  }
+  @else if $breakpoint == 'extra' {
+    @media  (min-width: 1501px) {@content;}
   }
 }
 

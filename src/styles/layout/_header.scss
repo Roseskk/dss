@@ -3,7 +3,16 @@
 
 .header {
   background-color: transparent;
-  @include flexbox(row, center, space-between)
+  @include flexbox(row, center, space-between);
+  @include respond-to('large') {
+    @include flexbox(column, center, space-between, 20px);
+  }
+  @include respond-to('medium') {
+    @include flexbox(column, center, space-between, 20px);
+  }
+  @include respond-to('small') {
+    @include flexbox(column, flex-start, space-between, 20px);
+  }
 }
 .section-header {
   position: relative;
@@ -12,6 +21,20 @@
   padding: 80px 160px;
   @include background-image('../../images/head/header.png');
   @include flexbox(column, unset, unset, 246px);
+
+
+  @include respond-to('large') {
+    @include flexbox(column, unset, unset, 50px);
+
+  }
+  @include respond-to('medium') {
+    @include flexbox(column, unset, unset, 50px);
+    padding: 37px 20px;
+  }
+  @include respond-to('small') {
+    @include flexbox(column, unset, unset, 50px);
+    padding: 37px 20px;
+  }
 
   &::before,
   &::after {
@@ -39,6 +62,21 @@
 .header-list {
   color: white;
   font-size: 20px;
+  @include respond-to('large') {
+    width: 100%;
+
+    font-size: 16px;
+    @include flexbox(row, center, space-between, 20px)
+  }
+  @include respond-to('medium') {
+    width: 100%;
+
+    font-size: 16px;
+    @include flexbox(row, center, center, 20px)
+  }
+  @include respond-to('small') {
+    display: none;
+  }
   @include flexbox(row, center, flex-start, 77px)
 }
 
