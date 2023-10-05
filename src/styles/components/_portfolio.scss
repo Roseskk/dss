@@ -275,3 +275,23 @@
     }
   }
 }
+
+.portfolio-anchor {
+  @include flexbox(row, center, center);
+
+  span {
+
+    display: inline-block;
+    position: relative;
+    font-size: 22px;
+    font-weight: 600;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;  // Или другое значение для правильного позиционирования
+      left: 0;
+      width: 100%;
+      border-bottom: 5px dashed $color-secondary-hover;
+    }
+  }
+}

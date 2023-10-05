@@ -78,7 +78,9 @@ const Portfolio: React.FC = () => {
                     }
                 </ul>
             </div>
-
+            <div className={'portfolio-anchor'}>
+                <span>ВСЕ ПРОЕКТЫ</span>
+            </div>
         </section>
     )
 }
