@@ -1,6 +1,11 @@
 @import 'abstracts/variables';
 @import 'components/content';
+@import 'components/contacs';
+@import 'components/skills';
+@import 'components/mui';
 @import 'components/about';
+@import 'components/swiper';
+@import 'components/blog';
 @import 'components/portfolio';
 @import 'components/services';
 @import 'components/scroll';
@@ -11,4 +16,12 @@
 @import 'layout/header';
 @import 'pages/home';
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
