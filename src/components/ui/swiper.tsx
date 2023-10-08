@@ -23,13 +23,13 @@ const Carousel: React.FC = () => {
                 animation: `scroll ${animationDuration}s linear infinite`,
             }}>
                 {images.map((image, index) => (
-                    <div key={index} style={{ flexShrink: 0, width: '10%',height: '100%' }}>
+                    <div key={index} style={{ flexShrink: 0, width: '33%',height: '100%' }}>
                         <img src={image} alt={`Slide ${index + 1}`} style={{objectFit: 'cover' }} />
                     </div>
                 ))}
                 {/* Дублирование изображений для бесконечного эффекта */}
                 {images.map((image, index) => (
-                    <div key={index + totalImages} style={{ flexShrink: 0, width: '10%', height: '100%' }}>
+                    <div key={index + totalImages} style={{ flexShrink: 0, width: '33%', height: '100%' }}>
                         <img src={image} alt={`Slide ${index + 1 + totalImages}`} style={{objectFit: 'cover' }} />
                     </div>
                 ))}
