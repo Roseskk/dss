@@ -9,9 +9,11 @@
   @include flexbox(column, unset, unset, 70px);
   @include respond-to('medium') {
     padding: 0;
+    overflow: hidden;
   }
   @include respond-to('small') {
     padding: 0;
+    overflow: hidden;
   }
 
 }
@@ -127,6 +129,7 @@
 
 .portfolio-bottom {
   color: white;
+  overflow: hidden;
   ul {
     @include flexbox(row, center, unset, 10px);
 

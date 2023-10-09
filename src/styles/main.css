@@ -848,11 +848,13 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   .portfolio {
     padding: 0;
+    overflow: hidden;
   }
 }
 @media (max-width: 767px) {
   .portfolio {
     padding: 0;
+    overflow: hidden;
   }
 }
 
@@ -967,6 +969,7 @@
 
 .portfolio-bottom {
   color: white;
+  overflow: hidden;
 }
 .portfolio-bottom ul {
   display: flex;
@@ -1700,6 +1703,9 @@ body {
   100% {
     transform: translateX(-100%);
   }
+}
+::-webkit-scrollbar {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */
