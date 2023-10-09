@@ -109,6 +109,9 @@
   }
   .section-contacts-form {
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
     .section-contacts-mui-form-top {
       display: grid;

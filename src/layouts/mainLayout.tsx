@@ -17,7 +17,9 @@ const MainLayout: React.FC<ILayout> = ({children}) => {
                 <Scroll />
             </section>
             {children}
-            <Footer />
+            <section className={"section-footer"}>
+                <Footer />
+            </section>
         </div>
     )
 }

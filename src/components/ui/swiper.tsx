@@ -4,8 +4,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import image1 from '../../images/main/html5.svg';
 import image4 from '../../images/main/3.png';
 import image3 from '../../images/main/4.png';
+import image2 from '../../images/main/bitrix.svg';
 
-const images: string[] = [image1, image4, image3,image1, image4, image3,image1, image4, image3,image1, image4, image3,image1, image4, image3,image1, image4, image3];
+const images: string[] = [image1, image4,image2, image3];
 
 const Carousel: React.FC = () => {
     const totalImages = images.length;
@@ -20,6 +21,7 @@ const Carousel: React.FC = () => {
         }}>
             <div style={{
                 display: 'flex',
+                alignItems: 'center',
                 animation: `scroll ${animationDuration}s linear infinite`,
             }}>
                 {images.map((image, index) => (
