@@ -2,8 +2,10 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import logo from "../../images/head/logo.svg"
 import header_arrow from "../../images/head/header_arrow.svg"
+import {useModalContext} from "../../hooks/useModalContext";
 
 const Header: React.FC = (props) => {
+    const {isOpen, setOpen} = useModalContext()
     return(
         <header>
             <nav className={"header"}>
@@ -15,10 +17,10 @@ const Header: React.FC = (props) => {
                     <li className={'header-list__item'}>Блог</li>
                     <li className={'header-list__item'}>Контакты</li>
                 </ul>
-                <Link className={"link_center"} to={"#"}>
+                <a onClick={() => setOpen(true)} className={"link_center"}>
                     <span className={"link"}>Оформить заявку</span>
                     <img src={header_arrow} alt={'arrow'} />
-                </Link>
+                </a>
             </nav>
         </header>
     )

@@ -1,11 +1,13 @@
 import React from 'react';
 import modalImage from '../../images/ui/modal.png'
+import {useModalContext} from "../../hooks/useModalContext";
 
 const Modal: React.FC = () => {
+    const {isOpen, setOpen} = useModalContext()
     return(
         <>
-            <div className={'modal-container'}>
-                <button className={'modal-exit'}>Закрыть</button>
+            <div className={`modal-container ${isOpen ? 'modal-visible' : 'modal-invisible'}`}>
+                <button onClick={() =>  setOpen(false)} className={'modal-exit'}>Закрыть</button>
                 <div className={'modal-left'}>
                     <img className={'modal-left-image'} src={modalImage} alt={'modal'} />
                 </div>
@@ -30,7 +32,9 @@ const Modal: React.FC = () => {
                     </div>
                 </form>
             </div>
-            <div className={'modal-bg-screen'} />
+            {
+                isOpen &&  <div className={'modal-bg-screen'} />
+            }
         </>
     )
 }

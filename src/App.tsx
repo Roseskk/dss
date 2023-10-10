@@ -5,15 +5,18 @@ import {routes} from "./routes";
 import withRouter from "./hoc/withRouter";
 import MainLayout from "./layouts/mainLayout";
 import ScrollProvider from "./hooks/useScrollContext";
+import ModalProvider from "./hooks/useModalContext";
 
 function App() {
   const route = useRoutes(routes)
   return (
       <>
           <ScrollProvider>
-              <MainLayout>
-                  {route}
-              </MainLayout>
+              <ModalProvider>
+                  <MainLayout>
+                      {route}
+                  </MainLayout>
+              </ModalProvider>
           </ScrollProvider>
       </>
   );
