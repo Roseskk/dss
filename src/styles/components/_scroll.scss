@@ -6,6 +6,7 @@
   @include respond-to('small') {
     display: none;
   }
+  cursor: pointer;
 }
 .scroll {
   width: 34px;

@@ -6,6 +6,7 @@ import Blog from "../components/main/blog";
 import Contacts from "../components/main/contacts";
 import Skills from "../components/main/skills";
 import withAnimation from "../hoc/withAnimation";
+import Modal from "../components/ui/modal";
 
 const AnimatedAbout = withAnimation(About)
 const AnimatedPortfolio = withAnimation(Portfolio)
@@ -18,6 +19,7 @@ const Main: React.FC = () => {
 
     return(
         <>
+            <Modal />
             <AnimatedAbout />
             <AnimatedPortfolio />
             <AnimatedServices />
