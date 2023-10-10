@@ -5,16 +5,25 @@ import Services from "../components/main/services";
 import Blog from "../components/main/blog";
 import Contacts from "../components/main/contacts";
 import Skills from "../components/main/skills";
+import withAnimation from "../hoc/withAnimation";
+
+const AnimatedAbout = withAnimation(About)
+const AnimatedPortfolio = withAnimation(Portfolio)
+const AnimatedServices = withAnimation(Services)
+const AnimatedBlog = withAnimation(Blog)
+const AnimatedContacts = withAnimation(Contacts)
+const AnimatedSkills = withAnimation(Skills)
 
 const Main: React.FC = () => {
+
     return(
         <>
-            <About />
-            <Portfolio />
-            <Services />
-            <Blog />
-            <Contacts />
-            <Skills />
+            <AnimatedAbout />
+            <AnimatedPortfolio />
+            <AnimatedServices />
+            <AnimatedBlog />
+            <AnimatedContacts />
+            <AnimatedSkills />
         </>
     )
 }

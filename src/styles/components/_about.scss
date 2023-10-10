@@ -98,7 +98,7 @@
       padding: 40px 10px 40px 63px;  // порядок: верх, право, низ, лево
       background: white;
       @include flexbox(column, unset, unset, 19px);
-      @include transition(all, 0.5s);
+      @include transition(all, 1s, ease-in-out);
       @include respond-to('large') {
         width: unset;
       }
@@ -107,6 +107,7 @@
       }
       @include respond-to('small') {
         width: unset;
+        padding: 20px 20px;
       }
 
       cursor: pointer;

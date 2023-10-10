@@ -10,10 +10,14 @@
   @include respond-to('medium') {
     padding: 0;
     overflow: hidden;
+    margin-bottom: 10px;
+    @include flexbox(column, unset, unset, 20px);
   }
   @include respond-to('small') {
     padding: 0;
+    margin-bottom: 10px;
     overflow: hidden;
+    @include flexbox(column, unset, unset, 20px);
   }
 
 }

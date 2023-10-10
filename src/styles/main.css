@@ -548,7 +548,7 @@
   align-items: unset;
   justify-content: unset;
   gap: 19px;
-  transition: all 0.5s ease-in-out;
+  transition: all 1s ease-in-out;
   cursor: pointer;
 }
 @media (min-width: 1024px) and (max-width: 1500px) {
@@ -564,6 +564,7 @@
 @media (max-width: 767px) {
   .about-card ul li {
     width: unset;
+    padding: 20px 20px;
   }
 }
 .about-card ul li h3 {
@@ -849,12 +850,24 @@
   .portfolio {
     padding: 0;
     overflow: hidden;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: unset;
+    justify-content: unset;
+    gap: 20px;
   }
 }
 @media (max-width: 767px) {
   .portfolio {
     padding: 0;
+    margin-bottom: 10px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: unset;
+    justify-content: unset;
+    gap: 20px;
   }
 }
 
