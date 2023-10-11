@@ -1,6 +1,7 @@
 import {useLocation} from "react-router-dom";
 import MainLayout from "../layouts/mainLayout";
 import React from "react";
+import ServiceLayout from "../layouts/servicesLayout";
 
 const withLayout =  <P extends object>(Component: React.ComponentType<P>) => {
     return (props: P) => {
@@ -9,6 +10,7 @@ const withLayout =  <P extends object>(Component: React.ComponentType<P>) => {
         const getLayout = () => {
             switch (path) {
                 case '/': return MainLayout
+                case '/services': return ServiceLayout
                 default: return MainLayout
             }
         }

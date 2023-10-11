@@ -67,7 +67,8 @@
   margin: 0 auto;
   height: calc(100vh - 160px);
   padding: 80px 160px;
-  @include background-image('../../images/head/header.png');
+  background: #2E2E2E;
+  //@include background-image('../../images/head/header.png');
   @include flexbox(column, unset, unset, 246px);
 
 
