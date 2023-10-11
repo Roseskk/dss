@@ -1,9 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import modalImage from '../../images/ui/modal.png'
 import {useModalContext} from "../../hooks/useModalContext";
 
 const Modal: React.FC = () => {
     const {isOpen, setOpen} = useModalContext()
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflowY = 'hidden';
+
+        }
+        return () => {
+            document.body.style.overflowY = 'auto';
+        };
+    }, [isOpen]);
+
     return(
         <>
             <div className={`modal-container ${isOpen ? 'modal-visible' : 'modal-invisible'}`}>
@@ -33,7 +44,7 @@ const Modal: React.FC = () => {
                 </form>
             </div>
             {
-                isOpen &&  <div className={'modal-bg-screen'} />
+                isOpen &&  <div onClick={() => setOpen(false)} className={'modal-bg-screen'} />
             }
         </>
     )

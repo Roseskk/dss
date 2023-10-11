@@ -13,6 +13,7 @@
 }
 
 .link_center {
+  cursor: pointer;
   @include flexbox(row, center, flex-start, 18px);
   @include respond-to('small') {
     display: none;

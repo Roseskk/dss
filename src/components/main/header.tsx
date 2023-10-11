@@ -3,11 +3,13 @@ import {Link} from "react-router-dom";
 import logo from "../../images/head/logo.svg"
 import header_arrow from "../../images/head/header_arrow.svg"
 import {useModalContext} from "../../hooks/useModalContext";
+import {useHeaderScrollContext} from "../../hooks/useHeaderScrollContext";
 
-const Header: React.FC = (props) => {
+const Header: React.FC = () => {
     const {isOpen, setOpen} = useModalContext()
+    const {inView} = useHeaderScrollContext()
     return(
-        <header>
+        <header className={`${inView ? 'header-container' : 'header-container-inView'}`}>
             <nav className={"header"}>
                 <Link to={'/'}><img src={logo} alt={"DSSYSTEM"}/></Link>
                 <ul className={"header-list"}>

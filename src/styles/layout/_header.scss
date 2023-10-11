@@ -1,6 +1,46 @@
 @import "../abstracts/_variables";
 @import "../abstracts/_mixins";
 
+.header-container {
+  //z-index: 100;
+  //position: fixed;
+  //width: 100%;
+  //max-width: 1600px;
+  //top: 0;
+  //padding: 20px;
+  //background-color: #2E2E2E;
+
+  //&::before,
+  //&::after {
+  //  content: '';
+  //  height: auto;
+  //  width: 50vw;
+  //
+  //}
+
+}
+
+.header-container-inView {
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  max-width: 1600px;
+  top: 0;
+  padding: 20px;
+  background-color: #2E2E2E;
+
+  animation: slide-in 1s forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(1000px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 .header {
   background-color: transparent;
   @include flexbox(row, center, space-between);
@@ -15,6 +55,7 @@
   }
 }
 .section-header {
+  width: 100%;
   position: relative;
   margin: 0 auto;
   height: calc(100vh - 160px);

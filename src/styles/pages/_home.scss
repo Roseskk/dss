@@ -4,9 +4,13 @@
 .home-page {
   margin: 0 auto;
   max-width: 1920px;
-  overflow-x: hidden;
-
+  //overflow-x: hidden;
+  position: relative;
   @include flexbox(column, unset, unset, unset)
+}
+
+.scrollable {
+  overflow-y: hidden ;
 }
 
 
