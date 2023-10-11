@@ -1,4 +1,5 @@
 import React from "react";
+import {Navigate} from 'react-router-dom';
 import Main from "./pages/main";
 import Service from "./pages/service";
 
@@ -9,8 +10,14 @@ interface Route {
 
 export const routes: Route[] = [
     {
-        path: '/',
-        element: <Main />
+        path: '/home',
+        element: <Main />,
+
+    },
+    {
+        path: '*',
+        element: <Navigate to={'/home'} replace />
+
     },
     {
         path: '/services',
