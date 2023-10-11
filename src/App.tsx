@@ -7,17 +7,17 @@ import MainLayout from "./layouts/mainLayout";
 import ScrollProvider from "./hooks/useScrollContext";
 import ModalProvider from "./hooks/useModalContext";
 import HeaderScrollProvider from "./hooks/useHeaderScrollContext";
+import withLayout from "./hoc/withLayout";
 
 function App() {
   const route = useRoutes(routes)
+  const LayoutedRoute = withLayout(() => route)
   return (
       <>
           <ScrollProvider>
               <HeaderScrollProvider>
                   <ModalProvider>
-                      <MainLayout>
-                          {route}
-                      </MainLayout>
+                      <LayoutedRoute />
                   </ModalProvider>
               </HeaderScrollProvider>
           </ScrollProvider>

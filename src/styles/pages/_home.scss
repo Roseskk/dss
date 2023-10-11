@@ -4,8 +4,9 @@
 .home-page {
   margin: 0 auto;
   max-width: 1920px;
+  overflow: hidden;
   //overflow-x: hidden;
-  position: relative;
+  //position: relative;
   @include flexbox(column, unset, unset, unset)
 }
 

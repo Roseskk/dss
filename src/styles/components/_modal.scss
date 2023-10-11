@@ -14,19 +14,34 @@
   background-color: white;
   padding: 70px 113px 70px 0;
 
-  z-index: 11;
+  z-index: -1;
 
   border-radius: 12px;
 
   transition: all 0.5s ease-in-out;
 
+  @include respond-to('large') {
+    width: 1100px;
+    padding: 10px;
+  }
+
+  @include respond-to('medium') {
+    flex-direction: column;
+    width: 100%;
+  }
+  @include respond-to('small') {
+    flex-direction: column;
+    width: 100%;
+  }
+
   &.modal-visible {
+    z-index: 100;
     opacity: 1;
   }
 
   &.modal-invisible {
     opacity: 0;
-    transform: translateX(1000px);
+    //transform: translateX(1000px);
   }
 
   .modal-exit {
@@ -47,6 +62,13 @@
   }
 
   .modal-left {
+    @include respond-to('medium') {
+      display: none;
+    }
+
+    @include respond-to('small') {
+      display: none;
+    }
     width: 100%;
     height: 100%;
 
