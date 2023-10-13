@@ -11,7 +11,7 @@ export interface ILayout {
 
 const ServiceLayout: React.FC<ILayout> = ({children}) => {
     return(
-        <div className={`123`}>
+        <div className={`service-page`}>
             <section className={"service-section-header"}>
                 <Header />
                 <Content />

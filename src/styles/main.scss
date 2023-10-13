@@ -1,14 +1,7 @@
 @import 'abstracts/variables';
-@import 'components/services/offers';
 @import 'components/content';
-@import 'components/contacs';
-@import 'components/skills';
 @import 'components/mui';
-@import 'components/about';
 @import 'components/swiper';
-@import 'components/blog';
-@import 'components/portfolio';
-@import 'components/services';
 @import 'components/scroll';
 @import 'components/link';
 @import 'abstracts/mixins';
@@ -18,9 +11,8 @@
 @import 'layout/header';
 @import 'layout/footer';
 @import 'pages/home';
+@import 'pages/servicesPage';
 
-@import 'components/services/content';
-@import 'components/services/header';
 
 @import 'components/breadcrumbs';
 @import 'components/transformedCard';

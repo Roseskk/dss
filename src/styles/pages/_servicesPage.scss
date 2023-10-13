@@ -1,17 +1,261 @@
 @import "../abstracts/_mixins";
 
 
-.home-page {
+.service-page {
   margin: 0 auto;
   max-width: 1920px;
   overflow: hidden;
-  //overflow-x: hidden;
-  //position: relative;
   @include flexbox(column, unset, unset, unset)
 }
 
 .scrollable {
   overflow-y: hidden ;
 }
+
+
+// HEADER
+.header-container {
+
+}
+
+
+@keyframes fade-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(1000px);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(1000px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.header {
+  background-color: transparent;
+  @include flexbox(row, center, space-between);
+  @include respond-to('large') {
+    @include flexbox(column, center, space-between, 20px);
+  }
+  @include respond-to('medium') {
+    @include flexbox(column, center, space-between, 20px);
+  }
+  @include respond-to('small') {
+    @include flexbox(column, flex-start, space-between, 20px);
+  }
+}
+.service-section-header {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  max-height: 512px;
+  padding: 80px 160px;
+  background: #2E2E2E;
+  @include background-image('../../images/services/servicesLayout.png');
+  @include flexbox(column, unset, unset, 80px);
+
+
+  @include respond-to('large') {
+    @include flexbox(column, unset, unset, 50px);
+
+  }
+  @include respond-to('medium') {
+    @include flexbox(column, unset, unset, 50px);
+    padding: 37px 20px;
+  }
+  @include respond-to('small') {
+    @include flexbox(column, unset, unset, 50px);
+    padding: 37px 20px;
+  }
+
+  //&::before,
+  //&::after {
+  //  content: "";
+  //  position: absolute;
+  //  top: 0;
+  //  bottom: 0;
+  //  width: 50vw;
+  //}
+
+  &::before {
+    left: 100%;
+    background: linear-gradient(to left, #2a2a2a, #2a2a2a);
+  }
+
+  &::after {
+    right: 100%;
+    background: linear-gradient(to right, #2a2a2a, #2a2a2a);
+  }
+}
+
+
+
+
+.header-list {
+  color: white;
+  font-size: 20px;
+  @include respond-to('large') {
+    width: 100%;
+
+    font-size: 16px;
+    @include flexbox(row, center, space-between, 20px)
+  }
+  @include respond-to('medium') {
+    width: 100%;
+
+    font-size: 16px;
+    @include flexbox(row, center, center, 20px)
+  }
+  @include respond-to('small') {
+    display: none;
+  }
+  @include flexbox(row, center, flex-start, 77px)
+}
+
+
+
+.header-list__item {
+  position: relative;  // Указываем, чтобы псевдоэлемент позиционировался относительно этого элемента
+  cursor: pointer;
+
+  &::after {
+    content: "";  // Псевдоэлементы требуют свойство content, даже если оно пустое
+    position: absolute;
+    bottom: -12px;  // Позиционируем псевдоэлемент у нижней границы элемента .link
+    left: 50%;  // Позиционируем начальную точку псевдоэлемента в центре элемента .link
+    width: 0;  // Начальная ширина псевдоэлемента
+    height: 2px;  // Высота линии
+    background-color: $color-secondary-hover;  // Цвет линии
+    transition: width 0.3s ease-out;  // Анимация изменения ширины
+    transform: translateX(-50%);  // Центрирование псевдоэлемента по горизонтали
+  }
+
+  &:hover::after {
+    width: 100%;  // При наведении ширина псевдоэлемента становится 100%, расширяясь от центра к краям
+  }
+}
+
+
+
+//OFFERS
+.service-section-offers {
+  padding: 111px 160px;
+
+  @include respond-to('small') {
+    padding: 30px 27px;
+  }
+
+  @include respond-to('medium') {
+    padding: 30px 27px;
+  }
+
+  @include respond-to('large') {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  h2 {
+    color: black;
+    font-size: 35px;
+    white-space: nowrap;
+
+    span{
+      color: $color-secondary-hover;
+    }
+
+  }
+  .service-section-offers-list {
+    margin-top: 80px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 20px 30px;
+
+    @include respond-to('small') {
+      grid-template-columns: 1fr;
+    }
+
+    @include respond-to('medium') {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond-to('large') {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+
+//CONTENT
+.service-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .section-content-title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    max-width: 600px;
+
+    color: white;
+
+    h2 {
+      font-weight: 700;
+      font-size: 45px;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 32px;
+    }
+  }
+}
+
+//SEO
+.service-section-seo {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  padding: 111px 160px;
+
+  @include respond-to('small') {
+    padding: 30px 27px;
+  }
+
+  @include respond-to('medium') {
+    padding: 30px 27px;
+  }
+
+  @include respond-to('large') {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  h2 {
+    color: black;
+    font-size: 35px;
+    white-space: nowrap;
+
+    span{
+      color: $color-secondary-hover;
+    }
+
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 36px;
+  }
+}
+
 
 
