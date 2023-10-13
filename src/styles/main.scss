@@ -1,4 +1,5 @@
 @import 'abstracts/variables';
+@import 'components/services/offers';
 @import 'components/content';
 @import 'components/contacs';
 @import 'components/skills';
@@ -22,6 +23,7 @@
 @import 'components/services/header';
 
 @import 'components/breadcrumbs';
+@import 'components/transformedCard';
 
 @keyframes scroll {
   0% {

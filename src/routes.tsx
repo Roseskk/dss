@@ -12,7 +12,6 @@ export const routes: Route[] = [
     {
         path: '*',
         element: <Navigate to={'/home'} replace />
-
     },
     {
         path: '/home',

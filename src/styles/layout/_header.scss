@@ -135,6 +135,10 @@
   position: relative;  // Указываем, чтобы псевдоэлемент позиционировался относительно этого элемента
   cursor: pointer;
 
+  a {
+    color: white;
+  }
+
   &::after {
     content: "";  // Псевдоэлементы требуют свойство content, даже если оно пустое
     position: absolute;

@@ -22,7 +22,7 @@ const Header: React.FC = () => {
                 <Link to={'/'}><img src={logo} alt={"DSSYSTEM"}/></Link>
                 <ul className={"header-list"}>
                     <li className={'header-list__item'}>Портфолио</li>
-                    <li className={'header-list__item'}>Услуги</li>
+                    <li className={'header-list__item'}><Link to={'home/services'}>Услуги</Link></li>
                     <li className={'header-list__item'}>О нас</li>
                     <li className={'header-list__item'}>Блог</li>
                     <li className={'header-list__item'}>Контакты</li>

@@ -1,0 +1,48 @@
+@import "../../abstracts/mixins";
+
+.service-section-offers {
+  padding: 111px 160px;
+
+  @include respond-to('small') {
+    padding: 30px 27px;
+  }
+
+  @include respond-to('medium') {
+    padding: 30px 27px;
+  }
+
+  @include respond-to('large') {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  h2 {
+    color: black;
+    font-size: 35px;
+    white-space: nowrap;
+
+    span{
+      color: $color-secondary-hover;
+    }
+
+  }
+  .service-section-offers-list {
+    margin-top: 80px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 20px 30px;
+
+    @include respond-to('small') {
+      grid-template-columns: 1fr;
+    }
+
+    @include respond-to('medium') {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond-to('large') {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
