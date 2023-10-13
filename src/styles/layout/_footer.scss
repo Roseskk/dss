@@ -1,5 +1,6 @@
 .section-footer {
   padding: 111px 160px;
+  min-height: 100%;
   background-color:#2E2E2EFA;
   @include respond-to('small') {
     padding: 30px 27px;

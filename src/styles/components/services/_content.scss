@@ -1,0 +1,23 @@
+.service-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .section-content-title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    color: white;
+
+    h2 {
+      font-weight: 700;
+      font-size: 45px;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+}

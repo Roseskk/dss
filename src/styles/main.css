@@ -1758,6 +1758,7 @@ body {
 
 .section-footer {
   padding: 111px 160px;
+  min-height: 100%;
   background-color: #2E2E2EFA;
 }
 @media (max-width: 767px) {
@@ -1846,6 +1847,7 @@ body {
 .home-page {
   margin: 0 auto;
   max-width: 1920px;
+  height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -1856,6 +1858,206 @@ body {
 
 .scrollable {
   overflow-y: hidden;
+}
+
+.service-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.service-content-container .section-content-title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: white;
+}
+.service-content-container .section-content-title-container h2 {
+  font-weight: 700;
+  font-size: 45px;
+}
+.service-content-container .section-content-title-container p {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+@keyframes fade-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(1000px);
+  }
+}
+@keyframes slide-in {
+  from {
+    transform: translateX(1000px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.header {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+}
+@media (min-width: 1024px) and (max-width: 1500px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
+
+.service-section-header {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  max-height: 512px;
+  padding: 80px 160px;
+  background: #2E2E2E;
+  background-image: url("../../images/services/servicesLayout.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: unset;
+  justify-content: unset;
+  gap: 80px;
+}
+@media (min-width: 1024px) and (max-width: 1500px) {
+  .service-section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: unset;
+    justify-content: unset;
+    gap: 50px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .service-section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: unset;
+    justify-content: unset;
+    gap: 50px;
+    padding: 37px 20px;
+  }
+}
+@media (max-width: 767px) {
+  .service-section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: unset;
+    justify-content: unset;
+    gap: 50px;
+    padding: 37px 20px;
+  }
+}
+.service-section-header::before {
+  left: 100%;
+  background: linear-gradient(to left, #2a2a2a, #2a2a2a);
+}
+.service-section-header::after {
+  right: 100%;
+  background: linear-gradient(to right, #2a2a2a, #2a2a2a);
+}
+
+.header-list {
+  color: white;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 77px;
+}
+@media (min-width: 1024px) and (max-width: 1500px) {
+  .header-list {
+    width: 100%;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header-list {
+    width: 100%;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .header-list {
+    display: none;
+  }
+}
+
+.header-list__item {
+  position: relative;
+  cursor: pointer;
+}
+.header-list__item::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #B0D0FF;
+  transition: width 0.3s ease-out;
+  transform: translateX(-50%);
+}
+.header-list__item:hover::after {
+  width: 100%;
+}
+
+.breadcrumbs ul {
+  display: flex;
+  gap: 10px;
+}
+.breadcrumbs ul li a {
+  color: white;
+}
+.breadcrumbs ul li span {
+  color: white;
+}
+.breadcrumbs ul li:last-child a {
+  color: white;
+}
+.breadcrumbs ul li:last-child span {
+  display: none;
 }
 
 @keyframes scroll {

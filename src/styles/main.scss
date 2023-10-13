@@ -18,6 +18,11 @@
 @import 'layout/footer';
 @import 'pages/home';
 
+@import 'components/services/content';
+@import 'components/services/header';
+
+@import 'components/breadcrumbs';
+
 @keyframes scroll {
   0% {
     transform: translateX(0);

@@ -10,7 +10,7 @@ const withLayout =  <P extends object>(Component: React.ComponentType<P>) => {
         const getLayout = () => {
             switch (path) {
                 case '/': return MainLayout
-                case '/services': return ServiceLayout
+                case '/home/services': return ServiceLayout
                 default: return MainLayout
             }
         }

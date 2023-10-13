@@ -10,17 +10,17 @@ interface Route {
 
 export const routes: Route[] = [
     {
-        path: '/home',
-        element: <Main />,
-
-    },
-    {
         path: '*',
         element: <Navigate to={'/home'} replace />
 
     },
     {
-        path: '/services',
+        path: '/home',
+        element: <Main />,
+
+    },
+    {
+        path: '/home/services',
         element: <Service />
     }
 ];
