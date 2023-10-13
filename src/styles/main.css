@@ -1338,7 +1338,6 @@
 }
 .service-mobile-list .service-mobile p {
   max-height: 0;
-  visibility: hidden;
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;
 }

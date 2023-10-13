@@ -102,9 +102,8 @@
 
     p {
       max-height: 0;
-      visibility: hidden;
       overflow: hidden;
-      @include transition(max-height, 0.5s);
+      @include transition(max-height, 0.5s, ease-in-out);
 
       &.visible {
         max-height: 500px;
