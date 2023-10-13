@@ -1406,18 +1406,19 @@
   font-style: normal;
 }
 .modal-container {
-  position: absolute;
-  top: 50%;
+  position: fixed;
+  top: 100px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
+  transform: translateX(400%);
   width: 1200px;
   background-color: white;
   padding: 70px 113px 70px 0;
   z-index: -1;
   border-radius: 12px;
   transition: all 0.5s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
 }
 @media (min-width: 1024px) and (max-width: 1500px) {
   .modal-container {
@@ -1440,6 +1441,8 @@
 .modal-container.modal-visible {
   z-index: 100;
   opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%);
 }
 .modal-container.modal-invisible {
   opacity: 0;
@@ -1520,14 +1523,19 @@
 }
 
 .modal-bg-screen {
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 1920px;
   height: 100%;
-  overflow: hidden;
   background-color: #2E2E2E;
-  z-index: 10;
+  z-index: -100;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.modal-bg-screen.modal-bg-screen-visible {
   opacity: 0.7;
+  z-index: 10;
 }
 
 * {
@@ -1860,6 +1868,12 @@ body {
 }
 ::-webkit-scrollbar {
   display: none;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1920px;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=main.css.map */

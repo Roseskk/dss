@@ -44,7 +44,7 @@ const Modal: React.FC = () => {
                 </form>
             </div>
             {
-                isOpen &&  <div onClick={() => setOpen(false)} className={'modal-bg-screen'} />
+                 <div onClick={() => setOpen(false)} className={`modal-bg-screen ${isOpen && 'modal-bg-screen-visible'}`} />
             }
         </>
     )

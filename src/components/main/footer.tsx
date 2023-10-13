@@ -3,9 +3,11 @@ import {Link} from "react-router-dom";
 import logo from "../../images/head/logo.svg";
 import header_arrow from "../../images/head/header_arrow.svg";
 import {useResize} from "../../hooks/useResize";
+import {useModalContext} from "../../hooks/useModalContext";
 
 const Footer: React.FC = () => {
     const {width} = useResize()
+    const {setOpen} = useModalContext()
     return(
         <footer className={'footer'}>
             {
@@ -77,10 +79,10 @@ const Footer: React.FC = () => {
                                 <li className={'header-list__item'}>Блог</li>
                                 <li className={'header-list__item'}>Контакты</li>
                             </ul>
-                            <Link className={"link_center"} to={"#"}>
+                            <button onClick={() => setOpen(true)} className={"link_center"}>
                                 <span className={"link"}>Оформить заявку</span>
                                 <img src={header_arrow} alt={'arrow'} />
-                            </Link>
+                            </button>
                         </nav>
                         <div className={'footer-bot'}>
                             <div className={'section-contacts-icon'}>
