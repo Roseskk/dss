@@ -47,7 +47,7 @@
     @include flexbox(column, center, space-between, 20px);
   }
   @include respond-to('small') {
-    @include flexbox(column, flex-start, space-between, 20px);
+    @include flexbox(row !important, flex-start, space-between, 20px);
   }
 }
 .service-section-header {
@@ -148,7 +148,7 @@
   padding: 111px 160px;
 
   @include respond-to('small') {
-    padding: 30px 27px;
+    padding: 0;
   }
 
   @include respond-to('medium') {
@@ -163,6 +163,17 @@
     color: black;
     font-size: 35px;
     white-space: nowrap;
+
+    @include respond-to('small') {
+      font-size: 28px;
+      white-space: pre-wrap;
+      padding: 30px 27px;
+    }
+
+    @include respond-to('medium') {
+      font-size: 28px;
+      white-space: pre-wrap;
+    }
 
     span{
       color: $color-secondary-hover;
@@ -243,6 +254,16 @@
     color: black;
     font-size: 35px;
     white-space: nowrap;
+
+    @include respond-to('small') {
+      white-space: pre-wrap;
+      font-size: 28px;
+    }
+
+    @include respond-to('medium') {
+      white-space: pre-wrap;
+      font-size: 28px;
+    }
 
     span{
       color: $color-secondary-hover;

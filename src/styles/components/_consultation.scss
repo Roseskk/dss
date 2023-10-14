@@ -1,0 +1,110 @@
+.section-consultation {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 111px 160px;
+
+  @include respond-to('small') {
+    padding: 30px 27px;
+  }
+
+  @include respond-to('medium') {
+    padding: 30px 27px;
+  }
+
+  .consultation-title {
+    font-weight: 600;
+    font-size: 22px;
+    opacity: 0.5;
+
+    @include respond-to('small') {
+      white-space: pre-wrap;
+      font-size: 20px;
+    }
+
+    @include respond-to('medium') {
+      white-space: pre-wrap;
+      font-size: 20px;
+    }
+
+    color: black;
+  }
+
+  .consultation-sub {
+      color: black;
+      font-size: 28px;
+      white-space: nowrap;
+
+    @include respond-to('small') {
+      white-space: pre-wrap;
+      font-size: 20px;
+    }
+
+    @include respond-to('medium') {
+      white-space: pre-wrap;
+      font-size: 20px;
+    }
+
+      span{
+        color: $color-secondary-hover;
+      }
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
+
+    @include respond-to('small') {
+      flex-direction: column;
+    }
+
+    @include respond-to('medium') {
+      flex-direction: column;
+    }
+
+
+    .mui-input {
+      width: 100%;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-weight: 600;
+      font-size: 22px;
+      transition: opacity 0.5s ease-in-out;
+
+      @include respond-to('small') {
+        background-color: black;
+        padding: 20px 10px;
+        color: white;
+      }
+
+      span {
+        white-space: nowrap;
+
+        @include respond-to('small') {
+          white-space: pre-wrap;
+        }
+
+        @include respond-to('medium') {
+          white-space: pre-wrap;
+        }
+
+      }
+
+      svg {
+        @include respond-to('small') {
+          display: none;
+        }
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}

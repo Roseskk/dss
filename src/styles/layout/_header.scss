@@ -49,6 +49,7 @@
 }
 
 .header {
+  position: relative;
   background-color: transparent;
   @include flexbox(row, center, space-between);
   @include respond-to('large') {
@@ -59,6 +60,23 @@
   }
   @include respond-to('small') {
     @include flexbox(column, flex-start, space-between, 20px);
+  }
+
+  a {
+
+    img {
+        position: relative;
+        z-index: 1000;
+    }
+
+  }
+
+  .header-hamburger {
+
+    svg {
+      z-index: 1000;
+      position: relative;
+    }
   }
 }
 .section-header {

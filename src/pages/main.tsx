@@ -7,6 +7,7 @@ import Contacts from "../components/main/contacts";
 import Skills from "../components/main/skills";
 import withAnimation from "../hoc/withAnimation";
 import Modal from "../components/ui/modal";
+import MobileMenu from "../components/ui/mobileMenu";
 
 const AnimatedAbout = withAnimation(About)
 const AnimatedPortfolio = withAnimation(Portfolio)

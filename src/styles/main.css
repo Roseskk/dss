@@ -362,6 +362,168 @@
   z-index: 10;
 }
 
+.section-consultation {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 111px 160px;
+}
+@media (max-width: 767px) {
+  .section-consultation {
+    padding: 30px 27px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-consultation {
+    padding: 30px 27px;
+  }
+}
+.section-consultation .consultation-title {
+  font-weight: 600;
+  font-size: 22px;
+  opacity: 0.5;
+  color: black;
+}
+@media (max-width: 767px) {
+  .section-consultation .consultation-title {
+    white-space: pre-wrap;
+    font-size: 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-consultation .consultation-title {
+    white-space: pre-wrap;
+    font-size: 20px;
+  }
+}
+.section-consultation .consultation-sub {
+  color: black;
+  font-size: 28px;
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .section-consultation .consultation-sub {
+    white-space: pre-wrap;
+    font-size: 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-consultation .consultation-sub {
+    white-space: pre-wrap;
+    font-size: 20px;
+  }
+}
+.section-consultation .consultation-sub span {
+  color: #B0D0FF;
+}
+.section-consultation form {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-top: 40px;
+}
+@media (max-width: 767px) {
+  .section-consultation form {
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-consultation form {
+    flex-direction: column;
+  }
+}
+.section-consultation form .mui-input {
+  width: 100%;
+}
+.section-consultation form button {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-weight: 600;
+  font-size: 22px;
+  transition: opacity 0.5s ease-in-out;
+}
+@media (max-width: 767px) {
+  .section-consultation form button {
+    background-color: black;
+    padding: 20px 10px;
+    color: white;
+  }
+}
+.section-consultation form button span {
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .section-consultation form button span {
+    white-space: pre-wrap;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-consultation form button span {
+    white-space: pre-wrap;
+  }
+}
+@media (max-width: 767px) {
+  .section-consultation form button svg {
+    display: none;
+  }
+}
+.section-consultation form button:hover {
+  opacity: 0.5;
+}
+
+.section-mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-color: #2E2E2E;
+  overflow-y: scroll;
+  transform: translateX(1200px);
+  transition: transform 0.5s ease-in-out;
+}
+.section-mobile-menu .mobile-list {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+.section-mobile-menu .mobile-list .mobile-list__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1px solid gray;
+  width: 100%;
+  padding: 40px 0;
+  text-align: start;
+}
+.section-mobile-menu .mobile-list .mobile-list__item div {
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+}
+.section-mobile-menu .mobile-list .mobile-list__item:last-child {
+  border-bottom: 1px solid gray;
+}
+.section-mobile-menu span {
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+  opacity: 0.7;
+}
+.section-mobile-menu .mobile-contacts-icon {
+  display: flex;
+  gap: 40px;
+}
+.section-mobile-menu.section-mobile-menu__visible {
+  transform: translateX(0);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -434,6 +596,7 @@ body {
   }
 }
 .header {
+  position: relative;
   background-color: transparent;
   display: flex;
   flex-direction: row;
@@ -467,6 +630,14 @@ body {
     justify-content: space-between;
     gap: 20px;
   }
+}
+.header a img {
+  position: relative;
+  z-index: 1000;
+}
+.header .header-hamburger svg {
+  z-index: 1000;
+  position: relative;
 }
 
 .section-header {
@@ -1905,7 +2076,7 @@ body {
 @media (max-width: 767px) {
   .header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row !important;
     align-items: flex-start;
     justify-content: space-between;
     gap: 20px;
@@ -2028,7 +2199,7 @@ body {
 }
 @media (max-width: 767px) {
   .service-section-offers {
-    padding: 30px 27px;
+    padding: 0;
   }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -2045,6 +2216,19 @@ body {
   color: black;
   font-size: 35px;
   white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .service-section-offers h2 {
+    font-size: 28px;
+    white-space: pre-wrap;
+    padding: 30px 27px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .service-section-offers h2 {
+    font-size: 28px;
+    white-space: pre-wrap;
+  }
 }
 .service-section-offers h2 span {
   color: #B0D0FF;
@@ -2120,6 +2304,18 @@ body {
   font-size: 35px;
   white-space: nowrap;
 }
+@media (max-width: 767px) {
+  .service-section-seo h2 {
+    white-space: pre-wrap;
+    font-size: 28px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .service-section-seo h2 {
+    white-space: pre-wrap;
+    font-size: 28px;
+  }
+}
 .service-section-seo h2 span {
   color: #B0D0FF;
 }
@@ -2156,6 +2352,11 @@ body {
   flex-direction: column;
   gap: 30px;
 }
+@media (max-width: 767px) {
+  .transformedCard {
+    padding: 40px;
+  }
+}
 .transformedCard h3 {
   color: #B0D0FF;
   font-weight: 500;
@@ -2186,6 +2387,11 @@ body {
   position: absolute;
   bottom: 20px;
   left: 40px;
+}
+@media (max-width: 767px) {
+  .transformedCard svg {
+    display: none;
+  }
 }
 .transformedCard svg path {
   fill: black;
