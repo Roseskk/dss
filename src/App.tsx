@@ -8,19 +8,22 @@ import ScrollProvider from "./hooks/useScrollContext";
 import ModalProvider from "./hooks/useModalContext";
 import HeaderScrollProvider from "./hooks/useHeaderScrollContext";
 import withLayout from "./hoc/withLayout";
+import {MobileMenuProvider} from "./hooks/useMobileMenuContext";
 
 function App() {
   const route = useRoutes(routes)
   const LayoutedRoute = withLayout(() => route)
   return (
       <>
-          <ScrollProvider>
-              <HeaderScrollProvider>
-                  <ModalProvider>
-                      <LayoutedRoute />
-                  </ModalProvider>
-              </HeaderScrollProvider>
-          </ScrollProvider>
+          <MobileMenuProvider>
+              <ScrollProvider>
+                  <HeaderScrollProvider>
+                      <ModalProvider>
+                          <LayoutedRoute />
+                      </ModalProvider>
+                  </HeaderScrollProvider>
+              </ScrollProvider>
+          </MobileMenuProvider>
       </>
   );
 }

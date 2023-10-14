@@ -1,14 +1,14 @@
 import React, {useEffect} from 'react';
 import {Link, useNavigate} from "react-router-dom";
+import {useMobileMenuContext} from "../../hooks/useMobileMenuContext";
 
-interface IMobile {
-    isOpen: boolean
-}
-const MobileMenu: React.FC<IMobile> = ({isOpen}) => {
+
+const MobileMenu: React.FC = () => {
     const navigate = useNavigate()
+    const {isOpenMobile, setOpenMobile} = useMobileMenuContext()
 
     useEffect(() => {
-        if (isOpen) {
+        if (isOpenMobile) {
             document.body.style.overflowY = 'hidden'
         }
 
@@ -17,12 +17,17 @@ const MobileMenu: React.FC<IMobile> = ({isOpen}) => {
         }
     })
 
+    const handleNavigate = (str: string) => {
+        setOpenMobile(!isOpenMobile)
+        navigate(str)
+    }
+
 
     return(
-        <section className={`section-mobile-menu ${isOpen ? 'section-mobile-menu__visible' : ''}`}>
+        <section className={`section-mobile-menu ${isOpenMobile ? 'section-mobile-menu__visible' : ''}`}>
             <ul className={"mobile-list"}>
-                <li className={'mobile-list__item'}><div>Портфолио</div></li>
-                <li className={'mobile-list__item'}><div onClick={() => navigate('/home/services')}>Услуги</div></li>
+                <li className={'mobile-list__item'}><div onClick={() => handleNavigate('/')}>Портфолио</div></li>
+                <li className={'mobile-list__item'}><div onClick={() => handleNavigate('/home/services')}>Услуги</div></li>
                 <li className={'mobile-list__item'}><div>О нас</div></li>
                 <li className={'mobile-list__item'}><div>Блог</div></li>
                 <li className={'mobile-list__item'}><div>Контакты</div></li>
