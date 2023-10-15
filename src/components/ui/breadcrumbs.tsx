@@ -7,7 +7,8 @@ type PathNames = {
 
 const pathNames: PathNames = {
     home: 'Главная',
-    services: 'Услуги'
+    services: 'Услуги',
+    create: 'Разработка'
 }
 function Breadcrumbs() {
     const location = useLocation();
