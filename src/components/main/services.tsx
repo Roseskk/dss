@@ -1,29 +1,30 @@
 import React, {useState} from 'react';
 import {useResize} from "../../hooks/useResize";
 
-const Services: React.FC = () => {
+interface IItem {
+    id: number,
+    counter: string,
+    title: string,
+    text: string,
+}
+interface IServices {
+    titleBlack: string,
+    titleBlue?: string,
+    items: IItem[]
+}
+const Services: React.FC<IServices> = ({titleBlack, titleBlue, items}) => {
     const {width} = useResize()
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
-    const servicesItems = [
-        {id: 1, counter: '01', title: 'Разработка сайтов', text: 'Разрабатываем любые сайты (от лендингов до интернет-магазинов под ключ) на современных CMS и фреймворках, таких как Laravel.'},
-        {id: 2, counter: '02', title: 'Маркетинг', text: 'Продвигаем проекты, используем проверенные инструменты digital-маркетинга, оптимизируем сайты по канонам SEO.'},
-        {id: 3, counter: '03', title: 'CRM-системы', text: 'Создаем и внедряем CRM-системы для автоматизации вашего бизнеса и повышения эффективности продаж. '},
-        {id: 4, counter: '04', title: 'Доработка сайтов', text: 'Исправляем ошибки предыдущих разработчиков. Лишнее – убираем, нужное – добавляем.'},
-        {id: 5, counter: '05', title: 'Дизайн', text: 'Создаем уникальный веб-дизайн сайта или приложения, учитывая айдентику компании. Разработаем эксклюзивный фирменный стиль для начинающих проектов.'},
-        {id: 5, counter: '06', title: 'Администрирование', text: 'Отдаем проекты под контроль опытных администраторов, выполняем комплексное обслуживание сайта.'},
-        {id: 5, counter: '07', title: 'Контент-менеджмент', text: 'Предлагаем услуги наполнения сайта контентом – уникальными текстами и медиа.'},
-        {id: 5, counter: '08', title: 'Мобильная разработка', text: 'Разрабатываем функциональные кроссплатформенные приложения на QtC++.'},
-    ]
     return(
         <section className={"service-section"}>
             <div className={"service-top"}>
-                <h2>НАШИ <span>УСЛУГИ</span></h2>
+                <h2>{titleBlack} <span>{titleBlue}</span></h2>
                 <hr />
             </div>
             {
                 width <= 850
                 ? <ul className={'service-mobile-list'}>
-                        {servicesItems.map((item, index) => {
+                        {items.map((item, index) => {
                             return(
                                 <>
                                     <li className={'service-mobile'}
@@ -45,7 +46,7 @@ const Services: React.FC = () => {
                         })}
                     </ul>
                 : <ul>
-                        {servicesItems.map((item) => {
+                        {items.map((item) => {
                             return(
                                 <li>
                                     <div>

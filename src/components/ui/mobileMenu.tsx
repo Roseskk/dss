@@ -18,15 +18,17 @@ const MobileMenu: React.FC = () => {
     })
 
     const handleNavigate = (str: string) => {
-        setOpenMobile(!isOpenMobile)
-        navigate(str)
+        setOpenMobile(prev => !prev)
+        setTimeout(() => {
+            navigate(str)
+        },500)
     }
 
 
     return(
         <section className={`section-mobile-menu ${isOpenMobile ? 'section-mobile-menu__visible' : ''}`}>
             <ul className={"mobile-list"}>
-                <li className={'mobile-list__item'}><div onClick={() => handleNavigate('/')}>Портфолио</div></li>
+                <li className={'mobile-list__item'}><div onClick={() => handleNavigate('/home')}>Портфолио</div></li>
                 <li className={'mobile-list__item'}><div onClick={() => handleNavigate('/home/services')}>Услуги</div></li>
                 <li className={'mobile-list__item'}><div>О нас</div></li>
                 <li className={'mobile-list__item'}><div>Блог</div></li>

@@ -173,3 +173,38 @@
     width: 100%;  // При наведении ширина псевдоэлемента становится 100%, расширяясь от центра к краям
   }
 }
+
+.burger {
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.burger path:nth-child(1) {
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger path:nth-child(2) {
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger path:nth-child(3) {
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger.open path:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burger.open path:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open path:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+

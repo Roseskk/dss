@@ -263,7 +263,7 @@
   }
 }
 .modal-container.modal-visible {
-  z-index: 100;
+  z-index: 2000;
   opacity: 1;
   pointer-events: auto;
   transform: translateX(-50%);
@@ -752,6 +752,40 @@ body {
 }
 .header-list__item:hover::after {
   width: 100%;
+}
+
+.burger {
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.burger path:nth-child(1) {
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger path:nth-child(2) {
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger path:nth-child(3) {
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger.open path:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burger.open path:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open path:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .section-footer {
@@ -1416,141 +1450,6 @@ body {
   left: 0;
   width: 100%;
   border-bottom: 5px dashed #B0D0FF;
-}
-
-.service-section {
-  background: #F9F9F9;
-  padding: 111px 160px;
-  display: flex;
-  flex-direction: column;
-  align-items: unset;
-  justify-content: unset;
-  gap: 75px;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .service-section {
-    padding: 37px 20px;
-  }
-}
-@media (max-width: 767px) {
-  .service-section {
-    padding: 37px 20px;
-  }
-}
-.service-section .service-top {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: unset;
-  gap: 70px;
-}
-.service-section .service-top h2 {
-  font-size: 35px;
-  white-space: nowrap;
-}
-.service-section .service-top h2 span {
-  color: #B0D0FF;
-}
-.service-section .service-top hr {
-  width: 100%;
-  height: 1px;
-  color: gray;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .service-section .service-top hr {
-    display: none;
-  }
-}
-@media (max-width: 767px) {
-  .service-section .service-top hr {
-    display: none;
-  }
-}
-.service-section ul {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.service-section ul li {
-  flex: 0 0 24%;
-}
-@media (min-width: 1024px) and (max-width: 1500px) {
-  .service-section ul li {
-    flex: 0 0 48%;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .service-section ul li {
-    flex: 0 0 48%;
-  }
-}
-.service-section ul li div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: unset;
-  gap: 25px;
-}
-.service-section ul li div h3 {
-  font-size: 23px;
-  font-weight: 500;
-  color: #B0D0FF;
-}
-.service-section ul li div h2 {
-  font-size: 23px;
-  font-weight: 500;
-}
-.service-section ul li div p {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 32px;
-}
-.service-section ul .mobile-service__hr {
-  width: 100%;
-  height: 1px;
-}
-
-.service-mobile-list {
-  display: flex;
-  flex-direction: column !important;
-  align-items: unset;
-  justify-content: unset;
-  gap: 0;
-  width: 100%;
-}
-.service-mobile-list .service-mobile {
-  display: flex;
-  flex-direction: column;
-  align-items: unset;
-  justify-content: space-between;
-  gap: 20px;
-  width: 100%;
-}
-.service-mobile-list .service-mobile .service-mobile-tab {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0;
-}
-.service-mobile-list .service-mobile .service-mobile-tab div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: unset;
-  gap: 20px;
-}
-.service-mobile-list .service-mobile p {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
-}
-.service-mobile-list .service-mobile p.visible {
-  max-height: 500px;
-  visibility: visible;
 }
 
 .section-blog {
@@ -2423,6 +2322,141 @@ body {
 }
 .transformedCard:hover::before {
   rotate: 3deg;
+}
+
+.service-section {
+  background: #F9F9F9;
+  padding: 111px 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: unset;
+  justify-content: unset;
+  gap: 75px;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .service-section {
+    padding: 37px 20px;
+  }
+}
+@media (max-width: 767px) {
+  .service-section {
+    padding: 37px 20px;
+  }
+}
+.service-section .service-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: unset;
+  gap: 70px;
+}
+.service-section .service-top h2 {
+  font-size: 35px;
+  white-space: nowrap;
+}
+.service-section .service-top h2 span {
+  color: #B0D0FF;
+}
+.service-section .service-top hr {
+  width: 100%;
+  height: 1px;
+  color: gray;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .service-section .service-top hr {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .service-section .service-top hr {
+    display: none;
+  }
+}
+.service-section ul {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.service-section ul li {
+  flex: 0 0 24%;
+}
+@media (min-width: 1024px) and (max-width: 1500px) {
+  .service-section ul li {
+    flex: 0 0 48%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .service-section ul li {
+    flex: 0 0 48%;
+  }
+}
+.service-section ul li div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: unset;
+  gap: 25px;
+}
+.service-section ul li div h3 {
+  font-size: 23px;
+  font-weight: 500;
+  color: #B0D0FF;
+}
+.service-section ul li div h2 {
+  font-size: 23px;
+  font-weight: 500;
+}
+.service-section ul li div p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+}
+.service-section ul .mobile-service__hr {
+  width: 100%;
+  height: 1px;
+}
+
+.service-mobile-list {
+  display: flex;
+  flex-direction: column !important;
+  align-items: unset;
+  justify-content: unset;
+  gap: 0;
+  width: 100%;
+}
+.service-mobile-list .service-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: unset;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+.service-mobile-list .service-mobile .service-mobile-tab {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+}
+.service-mobile-list .service-mobile .service-mobile-tab div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: unset;
+  gap: 20px;
+}
+.service-mobile-list .service-mobile p {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+.service-mobile-list .service-mobile p.visible {
+  max-height: 500px;
+  visibility: visible;
 }
 
 @keyframes scroll {

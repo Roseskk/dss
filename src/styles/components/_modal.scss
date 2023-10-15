@@ -31,7 +31,7 @@
   }
 
   &.modal-visible {
-    z-index: 100;
+    z-index: 2000;
     opacity: 1;
     pointer-events: auto;
     transform: translateX(-50%);
