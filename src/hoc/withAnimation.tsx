@@ -7,6 +7,7 @@ const withAnimation = <P extends object>(Component: React.ComponentType<P>) => {
         const [ref, inView] = useInView({
             triggerOnce: true, // Анимация будет проигрываться только один раз
         });
+
         return (
             <div ref={ref}>
                 <motion.div

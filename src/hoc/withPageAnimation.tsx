@@ -46,9 +46,6 @@ export const withPageAnimation = <P extends object>(WrappedComponent : React.Com
                 style={{ position: "fixed", right: 0, top: '75vh', width: "100%", height: '25vh', background: '#B0D0FF', zIndex: 200000, transformOrigin: 'right', borderTop: '1px solid black' }}
             />
 
-
-
-
             {/*//WORKS VARIANT*/}
             {/*<motion.div*/}
             {/*    initial={{ x: "-100vw" }}*/}
@@ -65,19 +62,6 @@ export const withPageAnimation = <P extends object>(WrappedComponent : React.Com
             {/*    style={{ position: "fixed", right: 0, top: 0, bottom: 0, width: "50%", height: '100vh', background: '#B0D0FF', zIndex: 200000 }}*/}
             {/*/>*/}
 
-
-
-
-            {/*<motion.div*/}
-            {/*    key="page-transition"*/}
-            {/*    initial={{ opacity: 0, y: "-100%" }}*/}
-            {/*    animate={{ opacity: [1,0], y: ['0%','-100%'] }}*/}
-            {/*    exit={{ opacity: 0, y: "100%" }}*/}
-            {/*    transition={{ times: [0.5], duration: 1 }}*/}
-            {/*    style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", background: "black", zIndex: 99999 }}*/}
-            {/*>*/}
-            {/*    /!* Здесь можно добавить лоадер или другой контент *!/*/}
-            {/*</motion.div>*/}
         </>
     )
 }
