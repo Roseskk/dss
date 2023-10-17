@@ -12,6 +12,7 @@ import {AnimationProvider} from "./hooks/useAnimationContext";
 import {NavigationProvider} from "./hooks/useNavigationContext";
 import {AnimatePresence, motion} from "framer-motion";
 import AppRoutes from "./appRoutse";
+import withAppLoader from "./hoc/withAppLoader";
 
 function App() {
   // const route = useRoutes(routes)
@@ -51,4 +52,4 @@ function App() {
     );
 }
 
-export default App;
+export default withAppLoader(App);

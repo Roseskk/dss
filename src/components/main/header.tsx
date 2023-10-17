@@ -41,7 +41,7 @@ const Header: React.FC = () => {
                             <ul className={"header-list"}>
                                 <li className={'header-list__item'}>Портфолио</li>
                                 <li className={'header-list__item'}> <Link
-                                    to={'services'}
+                                    to={'/home/services'}
                                 >
                                     Услуги
                                 </Link></li>
