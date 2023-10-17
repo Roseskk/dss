@@ -33,21 +33,21 @@ function App() {
     // const animationKey = `${prevKey}-${currentKey}`;
 
     return (
-        <BrowserRouter>
             <AnimationProvider>
                 <NavigationProvider>
                     <MobileMenuProvider>
                         <ScrollProvider>
                             <HeaderScrollProvider>
                                 <ModalProvider>
-                                    <AppRoutes /> {/* Используем новый компонент маршрутов */}
+                                    <BrowserRouter>
+                                        <AppRoutes />
+                                    </BrowserRouter>
                                 </ModalProvider>
                             </HeaderScrollProvider>
                         </ScrollProvider>
                     </MobileMenuProvider>
                 </NavigationProvider>
             </AnimationProvider>
-        </BrowserRouter>
     );
 }
 

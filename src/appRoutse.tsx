@@ -1,15 +1,14 @@
 import React from 'react';
-import {Navigate, Route, Routes, useLocation} from 'react-router-dom';
-import Main from './pages/main';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { AnimatePresence } from "framer-motion";
+import Main from "./pages/main";
 import Service from './pages/service';
 import Additional from './pages/additional';
-import MainLayout from './layouts/mainLayout';
-import ServiceLayout from './layouts/servicesLayout';
-import DetailServicesLayout from './layouts/detailsServicesLayout';
-import {AnimatePresence} from "framer-motion";
-
+import MainLayout from "./layouts/mainLayout";
+import ServiceLayout from "./layouts/servicesLayout";
+import DetailServicesLayout from "./layouts/detailsServicesLayout";
 const AppRoutes: React.FC = () => {
-    const location = useLocation()
+    const location = useLocation();
     return (
         <AnimatePresence mode={'wait'}>
             <Routes location={location} key={location.pathname}>
@@ -21,5 +20,6 @@ const AppRoutes: React.FC = () => {
         </AnimatePresence>
     );
 };
+
 
 export default AppRoutes;

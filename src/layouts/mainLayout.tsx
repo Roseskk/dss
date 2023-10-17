@@ -15,6 +15,7 @@ export interface ILayout {
 
 const MainLayout: React.FC<ILayout> = ({children}) => {
     const {ref} = useHeaderScrollContext()
+    console.log('render')
     return(
             <div className={`home-page`}>
                 <section ref={ref} className={"section-header"}>
