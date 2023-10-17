@@ -9,6 +9,7 @@ const Service: React.FC = () => {
     const location = useLocation();
     const pathSegments = location.pathname.split('/');
 
+    // Находим индекс сегмента 'services'
     const servicesIndex = pathSegments.indexOf('services');
 
     const hasSegmentAfterServices = servicesIndex >= 0 && servicesIndex < pathSegments.length - 1;
@@ -16,15 +17,9 @@ const Service: React.FC = () => {
     return(
         <>
             <Modal />
-            {
-                hasSegmentAfterServices
-                ? <Outlet />
-                : <>
-                        <Offers />
-                        <Seo />
-                        <Consultation />
-                    </>
-            }
+            <Offers />
+            <Seo />
+            <Consultation />
         </>
     )
 }
