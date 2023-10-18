@@ -1,9 +1,40 @@
 @import 'abstracts/variables';
 @import 'components/content';
+@import 'components/mui';
+@import 'components/swiper';
 @import 'components/scroll';
 @import 'components/link';
 @import 'abstracts/mixins';
+@import 'components/modal';
+@import 'components/consultation';
+@import 'components/mobileMenu';
 @import 'base/reset';
 @import 'base/typography';
 @import 'layout/header';
+@import 'layout/footer';
 @import 'pages/home';
+@import 'pages/servicesPage';
+
+
+@import 'components/breadcrumbs';
+@import 'components/transformedCard';
+@import 'components/services';
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1920px;
+  overflow: hidden;
+}

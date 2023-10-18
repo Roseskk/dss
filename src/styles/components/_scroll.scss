@@ -3,6 +3,10 @@
   position: absolute;
   bottom: 80px;
   left: 50%;
+  @include respond-to('small') {
+    display: none;
+  }
+  cursor: pointer;
 }
 .scroll {
   width: 34px;

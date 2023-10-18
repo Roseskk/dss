@@ -1,0 +1,31 @@
+.mui-input {
+  position: relative;
+  padding-top: 15px;
+}
+
+.mui-input input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  font-size: 18px;
+}
+
+.mui-input label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 18px;
+  color: #aaa;
+  transition: transform 0.2s, font-size 0.2s;
+}
+
+.mui-input input:focus + label,
+.mui-input input:not(:placeholder-shown) + label {
+  transform: translateY(-25px);
+  font-size: 14px;
+}
+
+.mui-input input:focus {
+  border-bottom-color: #6200ea;
+}

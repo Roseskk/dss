@@ -1,0 +1,100 @@
+.transformedCard {
+  position: relative;
+
+  cursor: pointer;
+
+  padding: 40px 40px 60px 40px;
+  background: #F9F9F9;
+
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  gap: 30px;
+
+  @include respond-to('small') {
+    padding: 40px;
+  }
+
+  h3 {
+    color: $color-secondary-hover;
+    font-weight: 500;
+    font-size: 23px;
+  }
+
+  h2 {
+    color: black;
+    font-weight: 500;
+    font-size: 23px;
+
+    transition: color 0.5s ease-in-out;
+  }
+
+  p {
+    color: black;
+    line-height: 32px;
+    font-size: 18px;
+    font-weight: 400;
+
+    transition: color 0.5s ease-in-out;
+
+    max-height: 100px; /* или любая другая высота */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* ограничивает количество строк до 3 */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  }
+
+  svg {
+    position: absolute;
+    bottom: 20px ;
+    left: 40px;
+
+    @include respond-to('small') {
+      display: none;
+    }
+
+    path {
+      fill: black;
+
+      transition: fill 0.5s ease-in-out;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #8EB4EC;
+    z-index: -1;  // Это убедится, что псевдо-элемент расположен позади основного элемента
+    top: 0;  // Эти значения создают небольшое смещение
+    left: 0;  // Эти значения создают небольшое смещение
+
+    rotate: 0deg;
+
+    transition: all 0.5s ease-in-out;
+  }
+
+  &:hover {
+    background-color: #2E2E2EF5;
+
+    h2 {
+      color: white;
+    }
+
+    p {
+      color: white;
+    }
+
+    svg {
+      path {
+       fill: white;
+      }
+    }
+  }
+
+  &:hover::before {
+    rotate: 3deg;
+  }
+}

@@ -1,3 +1,5 @@
+@import "../abstracts/_variables";
+
 @mixin transition($property, $duration) {
   transition: $property $duration;
 }
@@ -10,7 +12,10 @@
     @media (min-width: 768px) and (max-width: 1023px) {@content;}
   }
   @else if $breakpoint == 'large' {
-    @media (min-width: 1024px) {@content; }
+    @media (min-width: 1024px) and (max-width: 1500px) {@content; }
+  }
+  @else if $breakpoint == 'extra' {
+    @media  (min-width: 1501px) {@content;}
   }
 }
 
@@ -46,6 +51,20 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@mixin subcolor($color) {
+  color: $color-secondary-hover;
+}
+
+@mixin img-background {
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 

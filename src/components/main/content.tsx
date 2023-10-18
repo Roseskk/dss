@@ -1,6 +1,7 @@
 import React from 'react';
 import header_arrow from "../../images/head/header_arrow.svg";
 import {Link} from "react-router-dom";
+import BlockAnimationComponent from "../../hoc/withContentAnimation";
 
 const Content: React.FC = () => {
     return(
@@ -9,9 +10,9 @@ const Content: React.FC = () => {
                 РАЗРАБОТКА И ПРОДВИЖЕНИЕ САЙТОВ
             </div>
             <div className={"content-even__custom content_subtitle"}>
-                <div>
-                    Vulputate orci sed tempor nunc leo iaculis imperdiet. Leo luctus pharetra euismod sed molestie sodales cursus. Ullamcorper dui nunc, duis lorem eget tristique augue vitae integer Vulputate orci sed tempor nunc leo iaculis imperdiet. Leo luctus pharetra euismod sed molestie sodales cursus. Ullamcorper dui nunc, duis lorem eget tristique augue vitae integer
-                </div>
+                    <div>
+                        DSSystem – веб-студия полного цикла, которая занимается разработкой и продвижением digital-проектов. Дизайн, создание сайтов и приложений, доработка, маркетинг и администрирование – все это мы сделаем на высшем уровне. Работаем с небольшими частными и крупными корпоративными проектами.
+                    </div>
                 <Link className={"link_center"} to={"#"}>
                     <span className={"link"}>Подробнее</span>
                     <img src={header_arrow} alt={'arrow'} />

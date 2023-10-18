@@ -1,0 +1,35 @@
+.section-roadmap {
+  padding: 111px 160px;
+
+  @include background-image("../../images/ui/roadmap.png");
+
+  @include respond-to('small') {
+    padding: 0;
+  }
+
+  @include respond-to('medium') {
+    padding: 30px 27px;
+  }
+
+  h2 {
+    color: black;
+    font-size: 35px;
+    white-space: nowrap;
+
+    @include respond-to('small') {
+      font-size: 28px;
+      white-space: pre-wrap;
+      padding: 30px 27px;
+    }
+
+    @include respond-to('medium') {
+      font-size: 28px;
+      white-space: pre-wrap;
+    }
+
+    span{
+      color: $color-secondary-hover;
+    }
+
+  }
+}

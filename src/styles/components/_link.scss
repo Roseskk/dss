@@ -2,10 +2,20 @@
 @import "../abstracts/_mixins";
 
 .link {
+  position: relative;  // Указываем, чтобы псевдоэлемент позиционировался относительно этого элемента
   color: $color-secondary;
   font-weight: 700;
+  @include transition(color, 0.2s);
+
+  &:hover {
+    color: $color-secondary-hover;
+  }
 }
 
 .link_center {
-  @include flexbox(row, center, flex-start, 18px)
+  cursor: pointer;
+  @include flexbox(row, center, flex-start, 18px);
+  @include respond-to('small') {
+    display: none;
+  }
 }

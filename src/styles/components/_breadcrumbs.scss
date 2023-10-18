@@ -1,0 +1,28 @@
+.breadcrumbs {
+  ul {
+    display: flex;
+    gap: 10px;
+
+    li {
+
+      a {
+        color: white;
+      }
+
+      span {
+        color: white;
+      }
+
+    }
+
+    li:last-child {
+      a {
+        color: white;
+      }
+
+      span {
+        display: none;
+      }
+    }
+  }
+}

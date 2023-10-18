@@ -1,46 +1,210 @@
 @import "../abstracts/_variables";
 @import "../abstracts/_mixins";
 
-.header {
-  background-color: transparent;
-  @include flexbox(row, center, space-between)
+.header-container {
+
 }
 
+//.header-container-inView {
+//  z-index: 100;
+//  position: fixed;
+//  width: 100%;
+//  max-width: 1600px;
+//  top: 0;
+//  padding: 20px;
+//  background-color: #2E2E2E;
+//  @include respond-to('large') {
+//   display: none;
+//  }
+//
+//  @include respond-to('medium') {
+//    display: none;
+//  }
+//  @include respond-to('small') {
+//    display: none;
+//  }
+//
+//  border-bottom-right-radius: 12px;
+//  border-bottom-left-radius: 12px;
+//  animation: slide-in 1s forwards;
+//}
 
-.section-header {
+
+@keyframes fade-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(1000px);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(1000px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.header {
   position: relative;
+  background-color: transparent;
+  @include flexbox(row, center, space-between);
+  @include respond-to('large') {
+    @include flexbox(column, center, space-between, 20px);
+  }
+  @include respond-to('medium') {
+    @include flexbox(column, center, space-between, 20px);
+  }
+  @include respond-to('small') {
+    @include flexbox(column, flex-start, space-between, 20px);
+  }
+
+  a {
+
+    img {
+        position: relative;
+        z-index: 1000;
+    }
+
+  }
+
+  .header-hamburger {
+
+    svg {
+      z-index: 1000;
+      position: relative;
+    }
+  }
+}
+.section-header {
   width: 100%;
-  max-width: 1920px;
+  position: relative;
   margin: 0 auto;
-  height: calc(100vh - 160px);
+  height: 100vh;
   padding: 80px 160px;
+  background: #2E2E2E;
   @include background-image('../../images/head/header.png');
   @include flexbox(column, unset, unset, 246px);
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50vw;
-    background-color: #2E2E2E;  // Или другой оттенок серого
+
+  @include respond-to('large') {
+    @include flexbox(column, unset, unset, 50px);
+
   }
+  @include respond-to('medium') {
+    @include flexbox(column, unset, unset, 50px);
+    padding: 37px 20px;
+  }
+  @include respond-to('small') {
+    @include flexbox(column, unset, unset, 50px);
+    padding: 37px 20px;
+  }
+
+  //&::before,
+  //&::after {
+  //  content: "";
+  //  position: absolute;
+  //  top: 0;
+  //  bottom: 0;
+  //  width: 50vw;
+  //}
 
   &::before {
     left: 100%;
-    transform: translateX(0);
+    background: linear-gradient(to left, #2a2a2a, #2a2a2a);
   }
 
   &::after {
     right: 100%;
-    transform: translateX(0);
+    background: linear-gradient(to right, #2a2a2a, #2a2a2a);
   }
 }
+
+
 
 
 .header-list {
   color: white;
   font-size: 20px;
+  @include respond-to('large') {
+    width: 100%;
+
+    font-size: 16px;
+    @include flexbox(row, center, space-between, 20px)
+  }
+  @include respond-to('medium') {
+    width: 100%;
+
+    font-size: 16px;
+    @include flexbox(row, center, center, 20px)
+  }
+  @include respond-to('small') {
+    display: none;
+  }
   @include flexbox(row, center, flex-start, 77px)
 }
+
+
+
+.header-list__item {
+  position: relative;  // Указываем, чтобы псевдоэлемент позиционировался относительно этого элемента
+  cursor: pointer;
+
+  a {
+    color: white;
+  }
+
+  &::after {
+    content: "";  // Псевдоэлементы требуют свойство content, даже если оно пустое
+    position: absolute;
+    bottom: -12px;  // Позиционируем псевдоэлемент у нижней границы элемента .link
+    left: 50%;  // Позиционируем начальную точку псевдоэлемента в центре элемента .link
+    width: 0;  // Начальная ширина псевдоэлемента
+    height: 2px;  // Высота линии
+    background-color: $color-secondary-hover;  // Цвет линии
+    transition: width 0.3s ease-out;  // Анимация изменения ширины
+    transform: translateX(-50%);  // Центрирование псевдоэлемента по горизонтали
+  }
+
+  &:hover::after {
+    width: 100%;  // При наведении ширина псевдоэлемента становится 100%, расширяясь от центра к краям
+  }
+}
+
+.burger {
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.burger path:nth-child(1) {
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger path:nth-child(2) {
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger path:nth-child(3) {
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger.open path:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burger.open path:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open path:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
