@@ -1,22 +1,25 @@
 import React, {useEffect, useRef} from "react";
-import {motion, useAnimation, useInView} from "framer-motion";
+import {motion, useAnimation} from "framer-motion";
+import {useInView} from "react-intersection-observer";
 
 
 const BlockAnimationComponent: React.FC<any> = ({children}) => {
-    const ref = useRef(null)
-    const isInView = useInView(ref, {once: true})
+    const [ref, inView] = useInView({
+        triggerOnce: true, // Анимация будет проигрываться только один раз
+    });
 
     const mainControls = useAnimation()
     const slideControls = useAnimation()
 
     useEffect(() => {
-        if (isInView) {}
-        mainControls.start('visible')
-        slideControls.start('visible')
-    }, [isInView]);
+        if (inView) {
+            mainControls.start('visible')
+            slideControls.start('visible')
+        }
+    }, [inView]);
 
     return (
-        <div ref={ref} style={{position: 'relative', width: 'fit-content', overflow: 'hidden'}}>
+        <div ref={ref} style={{position: 'relative', width: '100%', overflow: 'hidden'}}>
             <motion.div
                 variants={{
                     hidden: {opacity: 0, y: 75},
@@ -42,11 +45,10 @@ const BlockAnimationComponent: React.FC<any> = ({children}) => {
                     bottom: 4,
                     left: 0,
                     right: 0,
-                    background: 'red',
+                    background: '#B0D0FF',
                     zIndex: 99999
                 }}
             >
-                {children}
             </motion.div>
         </div>
     )
