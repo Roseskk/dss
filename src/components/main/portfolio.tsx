@@ -28,7 +28,7 @@ const Portfolio: React.FC = () => {
         {id: 4, img: portfolioPhoto, type:'Интернет-магазин', technology: 'JAva script + html5/css3 + 1C Битрикс', year: '2023', title: 'Lorem ipsum dolor sit amet, consectetur', sub: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mattis augue vel porta' },
     ]
     return(
-        <section className={"portfolio"}>
+        <section id={'portfolio'} className={"portfolio"}>
             <div className={"portfolio-top"}>
                 <div>
                     <h2>НАШЕ <span>ПОРТФОЛИО</span></h2>

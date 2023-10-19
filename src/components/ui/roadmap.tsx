@@ -1,28 +1,24 @@
 import React from 'react';
+import useRoadmap from "../../hooks/useRoadmap";
+import {useLocation} from "react-router-dom";
 
-interface IRoadmapCard {
-    id: number,
-    idx: string,
-    title: string,
-    text: string
-}
-interface IRoadmap {
-    title: string,
-    sub: string,
-    items: IRoadmapCard[]
-}
-const Roadmap: React.FC<IRoadmap> = ({title, sub, items}) => {
+
+const Roadmap: React.FC = () => {
+    const location = useLocation();
+    const pathnames = location.pathname.split('/').filter(x => x);
+
+    const roadmap = useRoadmap(pathnames[pathnames.length - 1])
     return(
         <section className={'section-roadmap'}>
-            <h2>{title}<span>{sub}</span></h2>
+            <h2>{roadmap?.title}<span>{roadmap?.sub}</span></h2>
             <ul>
                 {
-                    items.map(val => {
+                    roadmap?.items.map(val => {
                         return(
                             <li key={val.id}>
                                 <h3>{val.idx}</h3>
                                 <div>
-                                    <h3>{val.title}</h3>
+                                    <h3 className={'section-roadmap-title'}>{val.title}</h3>
                                     <span>{val.text}</span>
                                 </div>
                             </li>

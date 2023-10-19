@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 const Contacts: React.FC = () => {
     return(
-        <section className={'section-contacts'}>
+        <section id={'contacts'} className={'section-contacts'}>
             <div className={'section-contacts-left'}>
                 <h2>Контакты</h2>
                 <div className={'section-contacts-place'}>

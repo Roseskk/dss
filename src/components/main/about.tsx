@@ -13,7 +13,7 @@ const About: React.FC = () => {
         }
     },[setTarget])
     return(
-        <section ref={aboutRef} className={"about"}>
+        <section id={'about'} ref={aboutRef} className={"about"}>
             <div className={"about-left"}>
                 <BlockAnimationComponent>
                     <span className={"about-title"}>Мы — команда с богатым опытом разработки <span>сложных digital-решений</span></span>

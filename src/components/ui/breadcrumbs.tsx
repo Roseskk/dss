@@ -8,7 +8,14 @@ type PathNames = {
 const pathNames: PathNames = {
     home: 'Главная',
     services: 'Услуги',
-    create: 'Разработка'
+    create: 'Разработка',
+    crm: 'CRM',
+    marketing: 'Маркетинг',
+    additional: 'Доработка сайтов',
+    design: 'Дизайн',
+    administration: 'Администрирование',
+    manage: 'Контент-менеджмент',
+    mobile: 'Мобильная разработка',
 }
 function Breadcrumbs() {
     const location = useLocation();

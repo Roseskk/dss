@@ -1,30 +1,28 @@
 import React, {useState} from 'react';
 import {useResize} from "../../hooks/useResize";
+import useCardContent from "../../hooks/useCardContent";
+import {useLocation} from "react-router-dom";
 
-interface IItem {
-    id: number,
-    counter: string,
-    title: string,
-    text: string,
-}
-interface IServices {
-    titleBlack: string,
-    titleBlue?: string,
-    items: IItem[]
-}
-const Services: React.FC<IServices> = ({titleBlack, titleBlue, items}) => {
+
+const Services: React.FC = () => {
     const {width} = useResize()
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+    const location = useLocation();
+    const pathnames = location.pathname.split('/').filter(x => x);
+
+
+    const serviceContext = useCardContent(pathnames[pathnames.length-1])
     return(
         <section className={"service-section"}>
             <div className={"service-top"}>
-                <h2>{titleBlack} <span>{titleBlue}</span></h2>
+                <h2>{serviceContext?.title} <span>{serviceContext?.sub}</span></h2>
                 <hr />
             </div>
             {
                 width <= 850
                 ? <ul className={'service-mobile-list'}>
-                        {items.map((item, index) => {
+                        {serviceContext?.items.map((item, index) => {
                             return(
                                 <>
                                     <li className={'service-mobile'}
@@ -46,7 +44,7 @@ const Services: React.FC<IServices> = ({titleBlack, titleBlue, items}) => {
                         })}
                     </ul>
                 : <ul>
-                        {items.map((item) => {
+                        {serviceContext?.items.map((item) => {
                             return(
                                 <li>
                                     <div>

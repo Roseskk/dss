@@ -5,6 +5,9 @@ import Content from "../components/services/content";
 import Consultation from "../components/ui/consultation";
 import { motion } from 'framer-motion';
 import {withPageAnimation} from "../hoc/withPageAnimation";
+import Roadmap from "../components/ui/roadmap";
+import Price from "../components/services/price";
+import Services from "../components/main/services";
 
 
 export interface ILayout {
@@ -20,6 +23,9 @@ const DetailServicesLayout: React.FC<ILayout> = ({children}) => {
                     <Content />
                 </section>
                 {children}
+                <Services />
+                <Roadmap />
+                <Price />
                 <Consultation />
                 <section className={"section-footer"}>
                     <Footer />

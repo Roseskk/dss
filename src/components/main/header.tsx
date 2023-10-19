@@ -39,15 +39,15 @@ const Header: React.FC = () => {
                         </div>
                     : <>
                             <ul className={"header-list"}>
-                                <li className={'header-list__item'}>Портфолио</li>
+                                <li className={'header-list__item'}><a href={'#portfolio'}>Портфолио</a></li>
                                 <li className={'header-list__item'}> <Link
                                     to={'/home/services'}
                                 >
                                     Услуги
                                 </Link></li>
-                                <li className={'header-list__item'}>О нас</li>
-                                <li className={'header-list__item'}>Блог</li>
-                                <li className={'header-list__item'}>Контакты</li>
+                                <li className={'header-list__item'}><a href={'#about'}>О нас</a></li>
+                                <li className={'header-list__item'}><a href={'#blog'}>Блог</a></li>
+                                <li className={'header-list__item'}><a href={'#contacts'}>Контакты</a></li>
                             </ul>
                             <a onClick={() => setOpen(true)} className={"link_center"}>
                                 <span className={"link"}>Оформить заявку</span>

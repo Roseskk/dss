@@ -15,6 +15,13 @@ const AppRoutes: React.FC = () => {
                 <Route path="/home" element={<MainLayout><Main /></MainLayout>} />
                 <Route path="/home/services" element={<ServiceLayout><Service /></ServiceLayout>} />
                 <Route path="/home/services/create" element={<DetailServicesLayout><Additional /></DetailServicesLayout>} />
+                <Route path="/home/services/crm" element={<DetailServicesLayout><Additional /></DetailServicesLayout>} />
+                <Route path="/home/services/marketing" element={<DetailServicesLayout><Additional /></DetailServicesLayout>} />
+                <Route path="/home/services/additional" element={<DetailServicesLayout><Additional /></DetailServicesLayout>} />
+                <Route path="/home/services/design" element={<DetailServicesLayout><Additional /></DetailServicesLayout>} />
+                <Route path="/home/services/administration" element={<DetailServicesLayout><Additional /></DetailServicesLayout>} />
+                <Route path="/home/services/mobile" element={<DetailServicesLayout><Additional /></DetailServicesLayout>} />
+                <Route path="/home/services/manage" element={<DetailServicesLayout><Additional /></DetailServicesLayout>} />
                 <Route path="*" element={<Navigate to="/home" replace />} />
             </Routes>
         </AnimatePresence>

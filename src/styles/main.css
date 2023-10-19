@@ -1986,7 +1986,7 @@ body {
   width: 100%;
   position: relative;
   margin: 0 auto;
-  max-height: 512px;
+  max-height: 600px;
   padding: 80px 160px;
   background: #2E2E2E;
   background-image: url("../../images/services/servicesLayout.png");
@@ -2457,6 +2457,378 @@ body {
 .service-mobile-list .service-mobile p.visible {
   max-height: 500px;
   visibility: visible;
+}
+
+.section-roadmap {
+  padding: 111px 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  background-image: url("../../images/ui/roadmap.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 767px) {
+  .section-roadmap {
+    padding: 0;
+    gap: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-roadmap {
+    padding: 30px 27px;
+  }
+}
+.section-roadmap h2 {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  white-space: nowrap;
+  display: flex;
+  gap: 10px;
+}
+@media (max-width: 767px) {
+  .section-roadmap h2 {
+    font-size: 20px;
+    white-space: pre-wrap;
+    padding: 30px 27px;
+    align-self: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-roadmap h2 {
+    font-size: 28px;
+    white-space: pre-wrap;
+  }
+}
+.section-roadmap h2 span {
+  color: #B0D0FF;
+}
+.section-roadmap ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+.section-roadmap ul li {
+  display: flex;
+  max-width: 600px;
+  min-height: 150px;
+  gap: 60px;
+}
+.section-roadmap ul li h3 {
+  color: #B0D0FF;
+  font-size: 25px;
+  width: 20px;
+  position: relative;
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .section-roadmap ul li h3 {
+    display: none;
+  }
+}
+.section-roadmap ul li h3::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  bottom: 10px;
+  left: 50%;
+  width: 2px;
+  background-color: gray;
+  z-index: 100;
+}
+.section-roadmap ul li div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (max-width: 767px) {
+  .section-roadmap ul li div {
+    padding: 27px 30px;
+    border-bottom: 1px solid white;
+  }
+}
+.section-roadmap ul li div .section-roadmap-title {
+  color: white;
+  font-size: 23px;
+}
+.section-roadmap ul li div .section-roadmap-title::after {
+  display: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #ccc;
+  z-index: 100;
+}
+.section-roadmap ul li div span {
+  color: white;
+  font-size: 20px;
+  line-height: 32px;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .section-roadmap ul li div span {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+.section-price {
+  display: grid;
+  padding: 111px 160px;
+}
+@media (max-width: 767px) {
+  .section-price {
+    padding: 0;
+    gap: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-price {
+    padding: 30px 27px;
+  }
+}
+.section-price .price-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+.section-price .price-head .price-head-first {
+  display: flex;
+  align-items: center;
+  justify-self: flex-start;
+  padding: 40px 40px 40px 0;
+  background: white;
+}
+@media (max-width: 767px) {
+  .section-price .price-head .price-head-first {
+    padding: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-price .price-head .price-head-first {
+    padding: 10px 10px 10px 0;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1500px) {
+  .section-price .price-head .price-head-first {
+    padding: 20px 20px 20px 0;
+  }
+}
+.section-price .price-head .price-head-first h2 {
+  color: black;
+  font-size: 30px;
+  font-weight: 900;
+  white-space: nowrap;
+  display: flex;
+  gap: 10px;
+}
+@media (min-width: 1024px) and (max-width: 1500px) {
+  .section-price .price-head .price-head-first h2 {
+    font-size: 22px;
+    white-space: pre-wrap;
+  }
+}
+.section-price .price-head .price-head-first h2 span {
+  font-size: 30px;
+  font-weight: 700;
+  color: #B0D0FF;
+}
+@media (min-width: 1024px) and (max-width: 1500px) {
+  .section-price .price-head .price-head-first h2 span {
+    font-size: 22px;
+    white-space: pre-wrap;
+  }
+}
+.section-price .price-head .price-head-next {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+  background: #F9F9F9;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .section-price .price-head .price-head-next {
+    padding: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-price .price-head .price-head-next {
+    padding: 10px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1500px) {
+  .section-price .price-head .price-head-next {
+    padding: 20px;
+  }
+}
+.section-price .price-head .price-head-next::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: white;
+}
+.section-price .price-head .price-head-next h3 {
+  font-size: 28px;
+  font-weight: 800;
+}
+.section-price .price-head .price-head-next span {
+  font-size: 20px;
+  font-weight: 400;
+}
+.section-price .price-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+.section-price .price-content .price-content-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-self: flex-start;
+  padding: 40px 40px 40px 0;
+  background: white;
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+@media (max-width: 767px) {
+  .section-price .price-content .price-content-title {
+    padding: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-price .price-content .price-content-title {
+    padding: 10px 10px 10px 0;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1500px) {
+  .section-price .price-content .price-content-title {
+    padding: 20px 20px 20px 0;
+  }
+}
+.section-price .price-content .price-content-title:nth-last-child(-n+4) {
+  border-bottom: none;
+}
+.section-price .price-content .price-content-boolean {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+  background: #F9F9F9;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+@media (max-width: 767px) {
+  .section-price .price-content .price-content-boolean {
+    padding: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-price .price-content .price-content-boolean {
+    padding: 10px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1500px) {
+  .section-price .price-content .price-content-boolean {
+    padding: 20px;
+  }
+}
+.section-price .price-content .price-content-boolean::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: white;
+}
+.section-price .price-content .price-content-boolean:nth-last-child(-n+3) {
+  border-bottom: none;
+}
+
+.price-content-image {
+  width: 30px;
+  height: 30px;
+  align-self: center;
+}
+
+.price-content-bottom {
+  cursor: pointer;
+  display: flex !important;
+  justify-content: center;
+  gap: 20px;
+  font-weight: 700;
+  font-size: 20px;
+}
+.price-content-bottom svg {
+  transform: rotate(-45deg);
+}
+
+.section-price-mobile {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.section-price-mobile h2 {
+  color: black;
+  font-size: 30px;
+  font-weight: 900;
+  white-space: nowrap;
+  display: flex;
+  align-self: center;
+  gap: 10px;
+}
+.section-price-mobile h2 span {
+  font-size: 30px;
+  font-weight: 700;
+  color: #B0D0FF;
+}
+.section-price-mobile .price-mobile-wrapper {
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.section-price-mobile .price-mobile-wrapper:hover {
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+.section-price-mobile .price-mobile-wrapper h3, .section-price-mobile .price-mobile-wrapper h4 {
+  margin: 0;
+}
+.section-price-mobile .price-mobile-wrapper h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.section-price-mobile .price-mobile-wrapper h4 {
+  font-size: 18px;
+  color: grey;
+  margin-bottom: 20px;
+}
+.section-price-mobile .price-mobile-wrapper .price-mobile-values {
+  font-size: 16px;
+  color: #333;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes scroll {
