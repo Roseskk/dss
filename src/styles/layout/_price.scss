@@ -16,40 +16,51 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
-    gap: 0 20px;
 
-    padding: 40px;
 
     .price-head-first {
       display: flex;
       align-items: center;
-      padding: 40px;
+      justify-self: flex-start;
+      padding: 40px 40px 40px 0;
       background: white;
+
+      @include respond-to('small') {
+        padding: 0;
+      }
+
+      @include respond-to('medium') {
+        padding: 10px 10px 10px 0
+      }
+
+      @include respond-to('large') {
+        padding: 20px 20px 20px 0
+      }
 
       h2 {
         color: black;
         font-size: 30px;
-        font-weight: 700;
+        font-weight: 900;
         white-space: nowrap;
         display: flex;
 
         gap: 10px;
 
-        @include respond-to('small') {
-          font-size: 20px;
-          white-space: pre-wrap;
-          padding: 30px 27px;
 
-          align-self: center;
-        }
-
-        @include respond-to('medium') {
-          font-size: 28px;
+        @include respond-to('large') {
+          font-size: 22px;
           white-space: pre-wrap;
         }
 
         span{
+          font-size: 30px;
+          font-weight: 700;
           color: $color-secondary-hover;
+
+          @include respond-to('large') {
+            font-size: 22px;
+            white-space: pre-wrap;
+          }
         }
 
       }
@@ -57,6 +68,7 @@
     }
 
     .price-head-next {
+      position: relative;
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -64,9 +76,33 @@
       background: #F9F9F9;
       text-align: center;
 
+      @include respond-to('small') {
+        padding: 0;
+      }
+
+      @include respond-to('medium') {
+        padding: 10px
+      }
+
+      @include respond-to('large') {
+        padding: 20px
+      }
+
+
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 100%;
+        background: white;
+      }
+
       h3 {
         font-size: 28px;
-        font-weight: 500;
+        font-weight: 800;
       }
 
       span {
@@ -75,4 +111,168 @@
       }
     }
   }
+  .price-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    //gap: 0 20px;
+
+    .price-content-title {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-self: flex-start;
+      padding: 40px 40px 40px 0;
+      background: white;
+
+      font-size: 22px;
+      font-weight: 800;
+
+      text-align: center;
+
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+      @include respond-to('small') {
+        padding: 0;
+      }
+
+      @include respond-to('medium') {
+        padding: 10px 10px 10px 0
+      }
+
+      @include respond-to('large') {
+        padding: 20px 20px 20px 0
+      }
+
+      &:nth-last-child(-n+4) {
+        border-bottom: none;
+      }
+    }
+
+    .price-content-boolean {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 40px;
+      background: #F9F9F9;
+      text-align: center;
+
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+      @include respond-to('small') {
+        padding: 0;
+      }
+
+      @include respond-to('medium') {
+        padding: 10px
+      }
+
+      @include respond-to('large') {
+        padding: 20px
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20px;
+        height: 100%;
+        background: white;
+      }
+
+      &:nth-last-child(-n+3) {
+        border-bottom: none;
+      }
+    }
+  }
 }
+
+.price-content-image {
+  width: 30px;
+  height: 30px;
+
+  align-self: center;
+}
+
+.price-content-bottom {
+  cursor: pointer;
+  display: flex !important;
+  justify-content: center;
+  gap: 20px;
+
+  svg {
+    transform: rotate(-45deg);
+  }
+
+
+  font-weight: 700;
+  font-size: 20px;
+}
+
+// Mobile
+.section-price-mobile {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h2 {
+    color: black;
+    font-size: 30px;
+    font-weight: 900;
+    white-space: nowrap;
+    display: flex;
+    align-self: center;
+    gap: 10px;
+
+    span {
+      font-size: 30px;
+      font-weight: 700;
+      color: $color-secondary-hover;
+    }
+  }
+
+  .price-mobile-wrapper {
+    display: flex;
+    flex-direction: column;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+      transform: translateY(-5px);
+    }
+
+    h3, h4 {
+      margin: 0;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    h4 {
+      font-size: 18px;
+      color: grey;
+      margin-bottom: 20px;
+    }
+
+    .price-mobile-values {
+      font-size: 16px;
+      color: #333;
+      padding: 10px;
+      background: #fff;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+

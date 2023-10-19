@@ -15,7 +15,6 @@
 
 // HEADER
 .header-container {
-
 }
 
 
@@ -54,7 +53,7 @@
   width: 100%;
   position: relative;
   margin: 0 auto;
-  max-height: 512px;
+  max-height: 600px;
   padding: 80px 160px;
   background: #2E2E2E;
   @include background-image('../../images/services/servicesLayout.png');
