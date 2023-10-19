@@ -1,10 +1,14 @@
 .section-roadmap {
   padding: 111px 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
 
   @include background-image("../../images/ui/roadmap.png");
 
   @include respond-to('small') {
     padding: 0;
+    gap: 0;
   }
 
   @include respond-to('medium') {
@@ -12,14 +16,20 @@
   }
 
   h2 {
-    color: black;
-    font-size: 35px;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
     white-space: nowrap;
+    display: flex;
+
+    gap: 10px;
 
     @include respond-to('small') {
-      font-size: 28px;
+      font-size: 20px;
       white-space: pre-wrap;
       padding: 30px 27px;
+
+      align-self: center;
     }
 
     @include respond-to('medium') {
@@ -28,8 +38,100 @@
     }
 
     span{
+
       color: $color-secondary-hover;
     }
 
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    align-items: flex-start;
+
+    li {
+      display: flex;
+      max-width: 600px;
+      min-height: 150px;
+      gap: 60px;
+
+
+      h3 {
+        color: $color-secondary-hover;
+        font-size: 25px;
+        width: 20px;
+        position: relative;
+        white-space: nowrap;
+
+        @include respond-to('small') {
+          display: none;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50px; // начальная точка
+          bottom: 10px; // конечная точка
+          left: 50%;
+          width: 2px; // ширина линии
+          background-color: gray; // цвет линии
+          z-index: 100; // чтобы линия была под текстом
+        }
+
+        //&:last-of-type::after{
+        //    display: none;
+        //}
+
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include respond-to('small') {
+          padding: 27px 30px;
+          border-bottom: 1px solid white;
+        }
+
+        .section-roadmap-title {
+          color: white;
+          font-size: 23px;
+
+          &::after {
+            display: none;
+            content: "";
+            position: absolute;
+            top: 0; // начальная точка
+            bottom: 0; // конечная точка
+            // позиционирование по центру h3
+            width: 2px; // ширина линии
+            background-color: #ccc; // цвет линии
+            z-index: 100; // чтобы линия была под текстом
+          }
+
+        }
+
+        span {
+          color: white;
+          font-size: 20px;
+          line-height: 32px;
+
+          @include respond-to('small') {
+            font-size: 15px;
+            line-height: 20px;
+          }
+
+          //max-height: 70px; /* или любая другая высота */
+          overflow: hidden;
+          //display: -webkit-box;
+          //-webkit-line-clamp: 2; /* ограничивает количество строк до 3 */
+          //-webkit-box-orient: vertical;
+          //text-overflow: ellipsis;
+        }
+      }
+    }
   }
 }

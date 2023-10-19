@@ -21,28 +21,28 @@ export const withPageAnimation = <P extends object>(WrappedComponent : React.Com
                 initial={{ scaleX: 1, opacity: 1, }}
                 animate={{ scaleX: [ 1, 1, 0], opacity: [1, 1, 1] }}
                 exit={{scaleX:1, opacity: 1}}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.5 }}
                 style={{ position: "fixed", left: 0, top: 0, width: "100%", height: '25vh', background: '#B0D0FF', zIndex: 200000, transformOrigin: 'left',  }}
             />
             <motion.div
                 initial={{ scaleX: 1, opacity: 1, }}
                 animate={{ scaleX: [1, 2, 0], opacity: [1, 2, 1] }}
                 exit={{scaleX:1, opacity: 1}}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.5 }}
                 style={{ position: "fixed", right: 0, top: '25vh', width: "100%", height: '25vh', background: '#B0D0FF', zIndex: 200000, transformOrigin: 'right',  }}
             />
             <motion.div
                 initial={{ scaleX: 1, opacity: 1, }}
                 animate={{ scaleX: [1, 3, 0], opacity: [1,3,1] }}
                 exit={{scaleX:1, opacity: 1}}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.5 }}
                 style={{ position: "fixed", left: 0, top: '50vh', width: "100%", height: '25vh', background: '#B0D0FF', zIndex: 200000, transformOrigin: 'left',  }}
             />
             <motion.div
                 initial={{ scaleX: 1, opacity: 1, }}
                 animate={{ scaleX: [1, 4, 0], opacity: [1,4,1] }}
                 exit={{scaleX:1, opacity: 1}}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.5 }}
                 style={{ position: "fixed", right: 0, top: '75vh', width: "100%", height: '25vh', background: '#B0D0FF', zIndex: 200000, transformOrigin: 'right',  }}
             />
 

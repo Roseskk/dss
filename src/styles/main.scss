@@ -20,6 +20,9 @@
 @import 'components/transformedCard';
 @import 'components/services';
 
+@import 'layout/roadmap';
+@import 'layout/price';
+
 @keyframes scroll {
   0% {
     transform: translateX(0);

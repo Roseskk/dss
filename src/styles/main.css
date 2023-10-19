@@ -2459,6 +2459,194 @@ body {
   visibility: visible;
 }
 
+.section-roadmap {
+  padding: 111px 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  background-image: url("../../images/ui/roadmap.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 767px) {
+  .section-roadmap {
+    padding: 0;
+    gap: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-roadmap {
+    padding: 30px 27px;
+  }
+}
+.section-roadmap h2 {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  white-space: nowrap;
+  display: flex;
+  gap: 10px;
+}
+@media (max-width: 767px) {
+  .section-roadmap h2 {
+    font-size: 20px;
+    white-space: pre-wrap;
+    padding: 30px 27px;
+    align-self: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-roadmap h2 {
+    font-size: 28px;
+    white-space: pre-wrap;
+  }
+}
+.section-roadmap h2 span {
+  color: #B0D0FF;
+}
+.section-roadmap ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+.section-roadmap ul li {
+  display: flex;
+  max-width: 600px;
+  min-height: 150px;
+  gap: 60px;
+}
+.section-roadmap ul li h3 {
+  color: #B0D0FF;
+  font-size: 25px;
+  width: 20px;
+  position: relative;
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .section-roadmap ul li h3 {
+    display: none;
+  }
+}
+.section-roadmap ul li h3::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  bottom: 10px;
+  left: 50%;
+  width: 2px;
+  background-color: gray;
+  z-index: 100;
+}
+.section-roadmap ul li div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (max-width: 767px) {
+  .section-roadmap ul li div {
+    padding: 27px 30px;
+    border-bottom: 1px solid white;
+  }
+}
+.section-roadmap ul li div .section-roadmap-title {
+  color: white;
+  font-size: 23px;
+}
+.section-roadmap ul li div .section-roadmap-title::after {
+  display: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #ccc;
+  z-index: 100;
+}
+.section-roadmap ul li div span {
+  color: white;
+  font-size: 20px;
+  line-height: 32px;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .section-roadmap ul li div span {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+.section-price {
+  display: grid;
+  padding: 111px 160px;
+}
+@media (max-width: 767px) {
+  .section-price {
+    padding: 0;
+    gap: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-price {
+    padding: 30px 27px;
+  }
+}
+.section-price .price-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 0 20px;
+  padding: 40px;
+}
+.section-price .price-head .price-head-first {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  background: white;
+}
+.section-price .price-head .price-head-first h2 {
+  color: black;
+  font-size: 30px;
+  font-weight: 700;
+  white-space: nowrap;
+  display: flex;
+  gap: 10px;
+}
+@media (max-width: 767px) {
+  .section-price .price-head .price-head-first h2 {
+    font-size: 20px;
+    white-space: pre-wrap;
+    padding: 30px 27px;
+    align-self: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-price .price-head .price-head-first h2 {
+    font-size: 28px;
+    white-space: pre-wrap;
+  }
+}
+.section-price .price-head .price-head-first h2 span {
+  color: #B0D0FF;
+}
+.section-price .price-head .price-head-next {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+  background: #F9F9F9;
+  text-align: center;
+}
+.section-price .price-head .price-head-next h3 {
+  font-size: 28px;
+  font-weight: 500;
+}
+.section-price .price-head .price-head-next span {
+  font-size: 20px;
+  font-weight: 400;
+}
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
