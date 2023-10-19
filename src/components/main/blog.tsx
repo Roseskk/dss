@@ -30,7 +30,7 @@ const Blog: React.FC = () => {
         },
     ]
     return(
-        <section className={'section-blog'}>
+        <section id={'blog'} className={'section-blog'}>
             <div className={'section-blog-top-container'}>
                 <h2>БЛОГ</h2>
                 <a href={'#'}>ЧИТАТЬ ВСЕ НОВОСТИ <img src={arrowRight} alt={'arrow'} /></a>
