@@ -278,4 +278,56 @@
 }
 
 
+//priceCategory
+
+.section-priceCategory {
+
+  padding: 111px 160px;
+
+  @include respond-to('small') {
+    padding: 0;
+  }
+
+  @include respond-to('medium') {
+    padding: 30px 27px;
+  }
+
+  .priceCategory-top {
+    @include flexbox(row, center, unset, 70px);
+
+    h2 {
+      font-size: 35px;
+      white-space: nowrap;
+
+      span{
+        color: $color-secondary-hover;
+      }
+
+    }
+
+    hr {
+      width: 100%;
+      height: 1px;
+      color: gray;
+
+      @include respond-to('medium') {
+        display: none;
+      }
+      @include respond-to('small') {
+        display: none;
+      }
+    }
+  }
+
+  .priceCategory-list {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+
+
+}
+
+
 

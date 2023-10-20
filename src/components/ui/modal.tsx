@@ -22,7 +22,7 @@ const Modal: React.FC = () => {
                 <div className={'modal-left'}>
                     <img className={'modal-left-image'} src={modalImage} alt={'modal'} />
                 </div>
-                <form className={'modal-right'}>
+                <form onSubmit={(e) => {e.preventDefault(); setOpen(false)}} className={'modal-right'}>
                     <h2 className={'modal-title'}>ОСТАВЬТЕ ЗАЯВКУ</h2>
                     <div className={'modal-right-sub'}>
                         <h3 className={'modal-sub'}>Запрлните свои контактные</h3>

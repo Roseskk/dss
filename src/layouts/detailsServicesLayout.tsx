@@ -8,6 +8,8 @@ import {withPageAnimation} from "../hoc/withPageAnimation";
 import Roadmap from "../components/ui/roadmap";
 import Price from "../components/services/price";
 import Services from "../components/main/services";
+import Modal from "../components/ui/modal";
+import PriceCategory from "../components/services/priceCategory";
 
 
 export interface ILayout {
@@ -23,7 +25,9 @@ const DetailServicesLayout: React.FC<ILayout> = ({children}) => {
                     <Content />
                 </section>
                 {children}
+                <Modal />
                 <Services />
+                <PriceCategory />
                 <Roadmap />
                 <Price />
                 <Consultation />

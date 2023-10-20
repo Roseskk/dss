@@ -202,6 +202,15 @@
   justify-content: center;
   gap: 20px;
 
+  &:hover {
+    color: #8EB4EC;
+    svg {
+      path {
+        fill: #8EB4EC
+      }
+    }
+  }
+
   svg {
     transform: rotate(-45deg);
   }
@@ -274,5 +283,16 @@
     }
   }
 }
+
+
+.price-selected-column {
+  position: absolute;
+  border-left: 3px solid $color-secondary-hover;
+}
+
+.price-selected-link {
+  color: $color-secondary-hover;
+}
+
 
 
