@@ -1,10 +1,14 @@
 import React from 'react';
 import TransformCard from "../ui/transformCard";
+import {useLocation} from "react-router-dom";
+import usePrice from "../../hooks/usePrice";
 
 const PriceCategory: React.FC = () => {
-    const price = [
-        {index: '150 000', title: 'Корпоративный интернет сайт', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'},
-    ]
+
+    const location = useLocation();
+    const pathnames = location.pathname.split('/').filter(x => x);
+
+    const price = usePrice(pathnames[pathnames.length - 1])
     return(
         <section className={'section-priceCategory'}>
             <div className={'priceCategory-top'}>
@@ -13,7 +17,7 @@ const PriceCategory: React.FC = () => {
             </div>
             <div className={'priceCategory-list'}>
                 {
-                    price.map(p => <TransformCard index={p.index} title={p.title} text={p.text} type={'price'} />)
+                    price?.items.map(p => <TransformCard index={p.price} title={p.title} text={p.text} type={'price'} />)
                 }
             </div>
         </section>

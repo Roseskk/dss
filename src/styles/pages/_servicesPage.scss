@@ -320,9 +320,24 @@
   }
 
   .priceCategory-list {
-    margin-top: 20px;
+    margin-top: 80px;
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 20px 30px;
+
+    @include respond-to('small') {
+      grid-template-columns: 1fr;
+    }
+
+    @include respond-to('medium') {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond-to('large') {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 
 
