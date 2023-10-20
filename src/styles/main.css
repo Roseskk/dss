@@ -2318,7 +2318,7 @@ body {
 }
 @media (max-width: 767px) {
   .transformedCard {
-    padding: 40px;
+    padding: 20px;
   }
 }
 .transformedCard h3 {
