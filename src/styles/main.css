@@ -2224,6 +2224,71 @@ body {
   line-height: 36px;
 }
 
+.section-priceCategory {
+  padding: 111px 160px;
+}
+@media (max-width: 767px) {
+  .section-priceCategory {
+    padding: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-priceCategory {
+    padding: 30px 27px;
+  }
+}
+.section-priceCategory .priceCategory-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: unset;
+  gap: 70px;
+}
+.section-priceCategory .priceCategory-top h2 {
+  font-size: 35px;
+  white-space: nowrap;
+}
+.section-priceCategory .priceCategory-top h2 span {
+  color: #B0D0FF;
+}
+.section-priceCategory .priceCategory-top hr {
+  width: 100%;
+  height: 1px;
+  color: gray;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-priceCategory .priceCategory-top hr {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .section-priceCategory .priceCategory-top hr {
+    display: none;
+  }
+}
+.section-priceCategory .priceCategory-list {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 20px 30px;
+}
+@media (max-width: 767px) {
+  .section-priceCategory .priceCategory-list {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-priceCategory .priceCategory-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1500px) {
+  .section-priceCategory .priceCategory-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
 .breadcrumbs ul {
   display: flex;
   gap: 10px;
@@ -2772,6 +2837,12 @@ body {
   font-weight: 700;
   font-size: 20px;
 }
+.price-content-bottom:hover {
+  color: #8EB4EC;
+}
+.price-content-bottom:hover svg path {
+  fill: #8EB4EC;
+}
 .price-content-bottom svg {
   transform: rotate(-45deg);
 }
@@ -2829,6 +2900,15 @@ body {
   border-radius: 5px;
   margin-bottom: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.price-selected-column {
+  position: absolute;
+  border-left: 3px solid #B0D0FF;
+}
+
+.price-selected-link {
+  color: #B0D0FF;
 }
 
 @keyframes scroll {
